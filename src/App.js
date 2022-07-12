@@ -10,9 +10,7 @@ import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
-import BuketDetail from "./components/buket/BuketDetail";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
-import TanamanHiasDetail from "./components/tanamanhias/TanamanHiasDetail";
 
 function App() {
   return (
