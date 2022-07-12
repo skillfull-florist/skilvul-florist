@@ -31,7 +31,7 @@ const Buket = () => {
                             <Col mb={3} md={4} id="trending" key={index} >
                                 <div className="pt-4 m-1 text-white">
                                     <Card className="card text-dark border-dark">
-                                        <Card.Img src={item.gambar} />
+                                        <Card.Img src={item.gambar} height="300" />
                                         <Card.Body>
                                             <Card.Title>{item.nama}</Card.Title>
                                             <Card.Text>
