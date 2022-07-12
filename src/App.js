@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
+import Transaksi from "./components/transaksi/Transaksi";
 
 function App() {
   return (
@@ -24,10 +25,10 @@ function App() {
             <Route path="tanamanhias" element={<TanamanHias />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            <Route path="about" element={<About />}>
+            <Route path="about" element={<About />}/>
               <Route path="description" element={<Description />} />
               <Route path="services" element={<Services />} />
-            </Route>
+              <Route path="transaksi" element={<Transaksi/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
