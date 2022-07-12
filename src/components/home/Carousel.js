@@ -6,33 +6,41 @@ import Carousel from "react-bootstrap/Carousel";
 
 function HomeCarousel() {
   return (
-    <Carousel style={{ display: "block", width: 640, padding: 30 }}>
+    <Carousel fade style={{ display: "block", width: 640, padding: 30, textShadow: "1px 1px 2px black" }}>
       <Carousel.Item>
         <img className="d-block w-100" src={Img1} alt="Tanaman Hias" />
         <Carousel.Caption>
-          <h5>Tanaman Hias</h5>
-          <p>Aneka tanaman hias.</p>
+          <div style={{ padding: "1em", backgroundColor: "#E4DCCFAA" }}>
+            <h2>Tanaman Hias</h2>
+            <h3>Aneka tanaman hias.</h3>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={Img2} alt="Tanaman Hias" />
         <Carousel.Caption>
-          <h5>Tanaman Hias</h5>
-          <p>Aneka tanaman hias.</p>
+          <div style={{ padding: "1em", backgroundColor: "#E4DCCFAA" }}>
+            <h2>Tanaman Hias</h2>
+            <h3>Aneka tanaman hias.</h3>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={Img3} alt="Buket" />
         <Carousel.Caption>
-          <h5>Buket</h5>
-          <p>Aneka buket bunga</p>
+          <div style={{ padding: "1em", backgroundColor: "#E4DCCFAA" }}>
+            <h2>Buket</h2>
+            <h3>Aneka buket bunga</h3>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={Img4} alt="Buket" />
         <Carousel.Caption>
-          <h5>Buket</h5>
-          <p>Buket bunga spesial</p>
+          <div style={{ padding: "1em", backgroundColor: "#E4DCCFAA" }}>
+            <h2>Buket</h2>
+            <h3>Buket bunga spesial</h3>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
