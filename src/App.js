@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
+import Transaksi from "./components/transaksi/Transaksi";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="buket" element={<Buket />} />
             <Route path="tanamanhias" element={<TanamanHias />} />
+            <Route path="transaksi/:id" element={<Transaksi />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="about" element={<About />}>
