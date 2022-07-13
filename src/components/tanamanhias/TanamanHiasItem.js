@@ -12,7 +12,8 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
           <Card.Body>
             <Card.Title>{tanamanHias.nama}</Card.Title>
             <Card.Text>{tanamanHias.harga}</Card.Text>
-            <Button variant="outline-info" onClick={() => navigate(`/transaksi/tanamanhias/${tanamanHias.id}`)}>
+            <Button style={{backgroundColor:"#A48868", border: "1px solid #A48868"}} onClick={() => navigate(`/transaksi/tanamanhias/${tanamanHias.id}`)}>
+
               Beli Langsung
             </Button>
             <Button variant="outline-info">Masukkan keranjang</Button>
