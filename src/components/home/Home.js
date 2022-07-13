@@ -1,10 +1,13 @@
-import React from "react";
-import HomeCarousel from "./Carousel";
-import Kategori from "./Kategori";
+import React from 'react';
+import HomeCarousel from './Carousel';
+import Kategori from './Kategori';
 
 const Home = () => {
   return (
-    <div className="mt-4" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <div
+      className='my-5'
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <HomeCarousel />
       <br />
       <Kategori />

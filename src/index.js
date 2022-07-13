@@ -6,10 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./theme.css";
+// context
+import ContextProvidersHelper from "./context/ContextProvidersHelper";
+import UserContextProvider from "./context/UserContext";
+import AuthContextProvider from "./context/AuthContext";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ContextProvidersHelper providers={[<UserContextProvider />, <AuthContextProvider />]}>
+      <App />
+    </ContextProvidersHelper>
   </React.StrictMode>
 );
 
