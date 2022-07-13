@@ -7,12 +7,21 @@ function Transaksi() {
   useEffect(() => {
     const getTanamanHiasById = async () => {
       // axios
-      const result = await axios.get(`https://62bd2977bac21839b6fd61be.mockapi.io/api/tanamanhias/${params.id}`);
+      let url = "";
+      if (params.type === "buket") {
+        url = `https://62bd2977bac21839b6fd61be.mockapi.io/api/buket/${params.id}`;
+      }
+
+      if (params.type === "tanamanhias") {
+        url = `https://62bd2977bac21839b6fd61be.mockapi.io/api/tanamanhias/${params.id}`;
+      }
+
+      const result = await axios.get(url);
       console.log(result.data);
     };
 
     getTanamanHiasById();
-  }, []);
+  }, [params.id, params.type]);
   return <div>Transaksi {params.id}</div>;
 }
 

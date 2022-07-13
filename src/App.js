@@ -22,8 +22,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="buket" element={<Buket />} />
+            <Route path="buket/:id" element={<Buket />} />
             <Route path="tanamanhias" element={<TanamanHias />} />
             <Route path="transaksi/:id" element={<Transaksi />} />
+            <Route path="transaksi/:type/:id" element={<Transaksi />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="about" element={<About />}>

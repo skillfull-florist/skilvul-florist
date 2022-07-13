@@ -12,7 +12,7 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
           <Card.Body>
             <Card.Title>{tanamanHias.nama}</Card.Title>
             <Card.Text>{tanamanHias.harga}</Card.Text>
-            <Button variant="outline-info" onClick={() => navigate(`/transaksi/${tanamanHias.id}`)}>
+            <Button variant="outline-info" onClick={() => navigate(`/transaksi/tanamanhias/${tanamanHias.id}`)}>
               Beli Langsung
             </Button>
             <Button variant="outline-info">Masukkan keranjang</Button>
