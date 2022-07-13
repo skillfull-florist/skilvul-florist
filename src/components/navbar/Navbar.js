@@ -3,6 +3,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
 // import Button from "react-bootstrap/Button";
 // import ButtonGroup from "react-bootstrap/ButtonGroup";
 
@@ -30,7 +31,12 @@ export default function NavBar() {
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
             </Nav>
-
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <NavDropdown title="Masuk">
+                <NavDropdown.Item href="Login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="Register">Register</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
             {/* <div className="d-flex">
               <ButtonGroup>
                 <Button variant="outline-primary" size="sm">
