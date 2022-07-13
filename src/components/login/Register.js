@@ -27,8 +27,11 @@ function Register() {
 
   const validasi = (nilai) => {
     const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!nilai.email) {
       errors.email = "Email Tidak Boleh Kosong";
+    } else if (!regex.test(userData.email)) {
+      errors.email = "Format email salah !!!";
     }
     if (!nilai.username) {
       errors.username = "Nama Anda Tidak Boleh Kosong";
