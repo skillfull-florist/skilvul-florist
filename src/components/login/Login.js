@@ -1,82 +1,115 @@
-import React, { useState, useEffect } from "react";
-import { Button, Form } from "react-bootstrap";
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import { AuthContext } from './../../context/AuthContext';
+import { LOGIN } from './../../context/ContextConsts';
+import * as Helper from './LoginHelper';
 
-function Register() {
-  const [userData, setUserData] = useState({ email: "", password: "" });
-
+function Login({ from }) {
+  const navigate = useNavigate();
+  const [userForm, setUserForm] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [lihatPass, setLihatpass] = useState(false);
+  const { dispatch } = useContext(AuthContext);
 
   const handleChange = (event) => {
-    setUserData({ ...userData, [event.target.name]: event.target.value });
+    setUserForm({ ...userForm, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleKeyPress = (ev) => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+      handleSubmit(ev);
+    }
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setFormError(validasi(userData));
-    setIsSubmit(true);
-    // const data = JSON.stringify(userData);
-    // localStorage.setItem("user", data);
+    setFormError(Helper.validasiForm(userForm));
+    if (userForm.email !== '' && userForm.password !== '') {
+      if (Object.keys(formError).length === 0) {
+        const userData = { ...userForm };
+        const user = await Helper.getUserByEmailAndPassword(userData.email, userData.password);
+
+        if (user !== null) {
+          dispatch({
+            type: LOGIN,
+            payload: user,
+          });
+          navigate('/');
+        } else {
+          alert('User tidak ditemukan! Silakan daftar dulu.');
+        }
+      }
+    }
   };
 
-  useEffect(() => {
-    if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(userData);
-    }
-  }, [formError]);
-
-  const validasi = (nilai) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!nilai.email) {
-      errors.email = "Email Tidak Boleh Kosong";
-    } else if (!regex.test(userData.email)) {
-      errors.email = "Format email salah !!!";
-    }
-
-    if (!nilai.password) {
-      errors.password = "Password Anda Tidak Boleh Kosong";
-    } else if (nilai.password.length < 8) {
-      errors.password = "Password lebih dari 8 Karakter ";
-    }
-    return errors;
-  };
-
-  const [lihatPass, setLihatpass] = useState(false);
   const lihatPassword = () => {
     setLihatpass((lihatPass) => !lihatPass);
   };
+
   return (
-    <div>
-      <h1>Login Member</h1>
-      <div style={{ marginBottom: "50px" }}></div>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>
-            <h4>Email Anda</h4>
-          </Form.Label>
-          <Form.Control type="email" placeholder="Masukan Email Anda" name="email" onChange={handleChange} />
-        </Form.Group>
-        <p>{formError.email}</p>
+    <div className='d-flex flex-column vh-100'>
+      <div className='mt-5'>
+        <h1>Masuk ke akun anda</h1>
+        <Form className='mt-5'>
+          <div className='text-start'>
+            <hr />
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
+              <Form.Label>
+                <h4>Email Anda</h4>
+              </Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='Masukan Email Anda'
+                name='email'
+                onChange={(ev) => handleChange(ev)}
+                onKeyPress={(ev) => handleKeyPress(ev)}
+              />
+            </Form.Group>
+            <p className='text-danger'>{formError.email}</p>
 
-        <Form.Group className="mb-3">
-          <Form.Label>
-            <h4>Password Anda</h4>
-          </Form.Label>
-          <Form.Control type={lihatPass ? "text" : "password"} placeholder="Masukan Password Anda" name="password" onChange={handleChange} />
-        </Form.Group>
-        <p>{formError.password}</p>
+            <Form.Group className='mb-3'>
+              <Form.Label>
+                <h4>Password Anda</h4>
+              </Form.Label>
+              <Form.Control
+                type={lihatPass ? 'text' : 'password'}
+                placeholder='Masukan Password Anda'
+                name='password'
+                onChange={(ev) => handleChange(ev)}
+                onKeyPress={(ev) => handleKeyPress(ev)}
+              />
+            </Form.Group>
+            <p className='text-danger'>{formError.password}</p>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="lihat password" onChange={lihatPassword} checked={lihatPass} />
-        </Form.Group>
+            <Form.Group className='mb-3' controlId='formBasicCheckbox'>
+              <Form.Check
+                type='checkbox'
+                label='Lihat password'
+                onChange={lihatPassword}
+                checked={lihatPass}
+              />
+            </Form.Group>
+            <hr />
+          </div>
 
-        <Button variant="dark" type="submit" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
+          <div className='text-start'>
+            <p>
+              Belum punya akun?&nbsp;
+              <span>
+                <Link to='/register'>Buat baru</Link>
+              </span>
+            </p>
+          </div>
+
+          <Button className='mt-3' variant='dark' type='submit' onClick={handleSubmit}>
+            Masuk
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }
 
-export default Register;
+export default Login;

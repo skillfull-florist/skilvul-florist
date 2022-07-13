@@ -11,10 +11,9 @@ const Buket = () => {
             const result = await axios.get(
                 "https://62bd2977bac21839b6fd61be.mockapi.io/api/buket/"
             );
-            console.log(result.data);
             setBukets(result.data);
         };
-        console.log("useEffect");
+
         getDataBuket();
     }, []);
 
@@ -26,7 +25,7 @@ const Buket = () => {
                 <br />
                 <Row className="justify-content">
                     {bukets.map((item, index) => (
-                        <BuketItem bukets={item} />
+                        <BuketItem key={index} bukets={item} />
                     ))}
                 </Row>
             </Container>

@@ -1,16 +1,16 @@
-import { useContext } from "react";
-import { UserContext } from "./../../context/UserContext";
-import { Navigate } from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from './../../context/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ children, loginOnly = true }) => {
-  const { user } = useContext(UserContext);
+  const { auth } = useContext(AuthContext);
 
-  if (!user.isLogin && loginOnly) {
-    return <Navigate to="/login" />;
+  if (!auth.isAuthenticated && loginOnly) {
+    return <Navigate to='/login' />;
   }
 
-  if (user.isLogin && !loginOnly) {
-    return <Navigate to="/" />;
+  if (auth.isAuthenticated && !loginOnly) {
+    return <Navigate to='/' />;
   }
 
   return children;

@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/navbar/ProtectedRoute";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import NotFoundImg from "./assets/404.svg";
@@ -12,6 +13,8 @@ import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
 import Transaksi from "./components/transaksi/Transaksi";
+import Profil from "./components/profil/Profil";
+import Products from "./components/products/Products";
 
 function App() {
   return (
@@ -24,14 +27,50 @@ function App() {
             <Route path="buket" element={<Buket />} />
             <Route path="buket/:id" element={<Buket />} />
             <Route path="tanamanhias" element={<TanamanHias />} />
-            <Route path="transaksi/:id" element={<Transaksi />} />
-            <Route path="transaksi/:type/:id" element={<Transaksi />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="about" element={<About />}/>
+            <Route
+              path="transaksi/:type/:id"
+              element={
+                <ProtectedRoute>
+                  <Transaksi />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="login"
+              element={
+                <ProtectedRoute loginOnly={false}>
+                  <Login />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="profil"
+              element={
+                <ProtectedRoute loginOnly={false}>
+                  <Profil />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="register"
+              element={
+                <ProtectedRoute loginOnly={false}>
+                  <Register />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="about" element={<About />}>
               <Route path="description" element={<Description />} />
               <Route path="services" element={<Services />} />
-              <Route path="transaksi" element={<Transaksi/>}/>
+            </Route>
+
+            <Route path="services" element={<Services />} />
+            <Route path="products" element={<Products />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
@@ -52,10 +91,10 @@ function NotFound() {
         flexDirection: "column",
       }}
     >
-      <h2>Cannot find what you are looking for</h2>
+      <h2>Woah! Halaman tidak ditemukan...</h2>
       <br />
       <br />
-      <img src={NotFoundImg} alt="404" width="480px" />
+      <img src={NotFoundImg} alt="404" width="320px" />
     </div>
   );
 }
