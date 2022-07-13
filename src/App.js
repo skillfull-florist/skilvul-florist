@@ -28,10 +28,10 @@ function App() {
             <Route path="transaksi/:type/:id" element={<Transaksi />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            <Route path="about" element={<About />}>
+            <Route path="about" element={<About />}/>
               <Route path="description" element={<Description />} />
               <Route path="services" element={<Services />} />
-            </Route>
+              <Route path="transaksi" element={<Transaksi/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // pengganti fetch
-import { Container, Row } from "react-bootstrap";
+import { Card, Container, Row, Col, Button, Modal  } from "react-bootstrap"
 import { TanamanHiasItem } from "./TanamanHiasItem";
 
 const TanamanHias = () => {
