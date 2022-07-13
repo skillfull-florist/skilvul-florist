@@ -1,8 +1,37 @@
-import {Alert, Row, Col,OverlayTrigger, Popover, Button} from 'react-bootstrap';
+import {Alert, Row, Col,OverlayTrigger, Popover, Button, Modal} from 'react-bootstrap';
+import React from 'react'
 import poto1 from "./photos/1.jpg";
 import poto2 from "./photos/mobile-payment.png";
 import poto3 from "./photos/2.png";
 import poto4 from "./photos/3.jpg";
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 function Transaksi() {
   const myStyle= {
@@ -10,6 +39,8 @@ function Transaksi() {
     color:'black',
     border: "2px solid #A48868"
   }
+
+  const [modalShow, setModalShow] = React.useState(false);
 
 
   return (
@@ -37,7 +68,7 @@ function Transaksi() {
     
     <hr />
       <Alert style={{backgroundColor:"#F5EAD1", border: "1px solid #A48868"}}>
-          This is a alert—check it out!
+          Mohon segera lakukan pembayaran
       </Alert>
 
     </Alert>
@@ -97,9 +128,13 @@ function Transaksi() {
           </Col>
         </Row>
       <div className="d-grid gap-2">
-      <Button variant="outline-danger" size="lg" style={{height:'50px'}}>
+      <Button onClick={() => setModalShow(true)} variant="outline-danger" size="lg" style={{height:'50px'}}>
         <p style={{fontSize:'15px', fontFamily:"sans-serif"}}>Bayar</p>
       </Button>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </div>
     </Alert>
     </Col>
