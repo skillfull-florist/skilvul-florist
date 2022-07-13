@@ -33,8 +33,12 @@ export default function NavBar() {
             </Nav>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <NavDropdown title="Masuk">
-                <NavDropdown.Item href="Login">Login</NavDropdown.Item>
-                <NavDropdown.Item href="Register">Register</NavDropdown.Item>
+                <LinkContainer to="login">
+                  <NavDropdown.Item>Login</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="register">
+                  <NavDropdown.Item>Register</NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
             </Nav>
             {/* <div className="d-flex">
