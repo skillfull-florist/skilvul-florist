@@ -12,6 +12,7 @@ import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
 import Transaksi from "./components/transaksi/Transaksi";
+import Rincian from "./components/transaksi/Rincian"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="description" element={<Description />} />
               <Route path="services" element={<Services />} />
               <Route path="transaksi" element={<Transaksi/>}/>
+              <Route path="rincian" element={<Rincian/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
