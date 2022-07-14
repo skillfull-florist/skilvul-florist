@@ -1,9 +1,11 @@
-import React from 'react'
+import CardRincian from './CardRincian';
 
 const Rincian = () => {
   return (
-    <div>Rincian</div>
-  )
-}
+    <div>
+      <CardRincian />
+    </div>
+  );
+};
 
-export default Rincian
+export default Rincian;
