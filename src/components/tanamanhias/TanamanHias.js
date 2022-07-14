@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // pengganti fetch
 import { Card, Container, Row, Col, Alert } from 'react-bootstrap';
 import { TanamanHiasItem } from './TanamanHiasItem';
-import Search from './Search';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
 

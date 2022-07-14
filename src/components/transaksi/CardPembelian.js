@@ -10,12 +10,11 @@ const CardPembelian = () => {
         color:'black',
         border: "2px solid #418459"
       }
-      const navigate = useNavigate();
 
       const [produk, setProduk]=useState([]);
 
-  const params = useParams();
-  useEffect(() => {
+    const params = useParams();
+    useEffect(() => {
     const getTanamanHiasById = async () => {
       
       // axios
@@ -44,8 +43,15 @@ const CardPembelian = () => {
           <p style={{textAlign:'left'}}><a href="https://react-bootstrap.github.io/components/overlays/#tooltips">Punya kode voucher?</a></p>
           <hr />
           <Alert style={myStyle}>
-            <p style={{textAlign:'left'}}><input type='checkbox' name='jenis_kelamin' value='perempuan' /> Bayar sebagian dengan saldo.Saldo anda : Rp 90.000</p>
-          </Alert>
+            <Row>
+              <Col lg={3} style={{textAlign:'left'}}>
+              <img src={produk.gambar} style={{width:"100px"}}/>
+              </Col>
+              <Col style={{display:'flex', alignItems:'center'}}>
+              <h5>{produk.nama}</h5>
+              </Col>
+            </Row>
+            </Alert>
           <hr/>
           <Alert style={myStyle}>
             <Row>
@@ -91,11 +97,9 @@ const CardPembelian = () => {
             </Col>
           </Row>
 
-          <div className="d-grid gap-2">
-            <Button onClick={() => navigate("/rincian")} variant="outline-danger" size="lg" style={{height:'50px'}}>
-              <p style={{fontSize:'15px', fontFamily:"sans-serif"}}>Bayar</p>
-            </Button>
-          </div>
+          <Alert style={{backgroundColor:"#E9F7E8", color:"red", border: "1px solid red"}}>
+                Mohon segera lakukan pembayaran!
+            </Alert>
         </Alert>
     </div>
   )
