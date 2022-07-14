@@ -1,81 +1,114 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; // pengganti fetch
-import { Card, Container, Row, Col, Alert  } from "react-bootstrap"
-import { TanamanHiasItem } from "./TanamanHiasItem";
-import Search from './Search'
-import img1 from "../../assets/buket.png"
-import img2 from "../../assets/hias.png"
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // pengganti fetch
+import { Card, Container, Row, Col, Alert } from 'react-bootstrap';
+import { TanamanHiasItem } from './TanamanHiasItem';
+import Search from './Search';
+import img1 from '../../assets/buket.png';
+import img2 from '../../assets/hias.png';
 
 const TanamanHias = () => {
-  const [tanamanHias, setTanamanHias] = useState([]);
-  const [loading,setLoading]= useState(false)
-  const [searchNama,setSearchNama]=useState("")
+  const [tanamanHiasAll, setTanamanHiasAll] = useState([]);
+  const [tanamanHiasFound, setTanamanHiasFound] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searchNama, setSearchNama] = useState('');
+
+  const handleSearchChange = (e) => {
+    setSearchNama(e.target.value.trim());
+
+    if (!loading && searchNama.length > 0) {
+      const found = tanamanHiasAll.filter((item) =>
+        item.nama.toLowerCase().includes(searchNama.toLowerCase()),
+      );
+      if (found.length > 0) {
+        setTanamanHiasFound(found);
+        return;
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (searchNama.length === 0) {
+      setTanamanHiasFound(tanamanHiasAll);
+    }
+  }, [searchNama]);
 
   useEffect(() => {
     const getDataTanamanHias = async () => {
       setLoading(true);
       // axios
-      const result = await axios.get("https://62bd2977bac21839b6fd61be.mockapi.io/api/tanamanhias/");
-      console.log(result.data);
-      setTanamanHias(result.data);
-      setLoading(false)
+      const result = await axios.get(
+        'https://62bd2977bac21839b6fd61be.mockapi.io/api/tanamanhias/',
+      );
+
+      setTanamanHiasAll(result.data);
+      setTanamanHiasFound(result.data);
+      setLoading(false);
     };
-    console.log("useEffect");
+
     getDataTanamanHias();
   }, []);
 
-
-  
   return (
     <div>
       <Container>
         <br />
-        <h2 className="text-center">Tanaman Hias</h2>
-        <hr/>
+        <h2 className='text-center'>Tanaman Hias</h2>
+        <hr />
         <Row>
-          <Col lg={3}>
-            <input
-            type="text"
-            placeholder="search"
-            onChange={(e) => setSearchNama(e.target.value)}
-            />
+          <Col lg={3} className='mb-5 mb-xl-0'>
+            <input type='text' placeholder='search' onChange={handleSearchChange} />
           </Col>
           <Col>
-            
-            <Alert style={{backgroundColor:'#E9F7E8', border:"#E9F7E8", borderRadius:"0",display:"flex", alignItems:'flex-end'}}>
-              <img style={{width:"120px"}} src={img1}/>
+            <Alert
+              style={{
+                backgroundColor: '#E9F7E8',
+                border: '#E9F7E8',
+                borderRadius: '0',
+                display: 'flex',
+                alignItems: 'flex-end',
+              }}
+            >
+              <img style={{ width: '120px' }} src={img1} />
               <Row>
-                <h6 style={{color:'black'}}>Hand Bouquet</h6>
-                <hr/>
-                <p style={{color:'black', fontSize:'10px'}}>Jual buket bunga online (hand bouquet) flannel, matahari, lily, & mawar dengan harga terjangkau di Jakarta Barat untuk acara ulang tahun, wisuda, dll.</p>
+                <h6 style={{ color: 'black' }}>Hand Bouquet</h6>
+                <hr />
+                <p style={{ color: 'black', fontSize: '10px' }}>
+                  Jual buket bunga online (hand bouquet) flannel, matahari, lily, & mawar dengan
+                  harga terjangkau di Jakarta Barat untuk acara ulang tahun, wisuda, dll.
+                </p>
               </Row>
             </Alert>
           </Col>
           <Col>
-          <Alert style={{backgroundColor:'#E9F7E8', border:"#E9F7E8", borderRadius:"0",display:"flex", alignItems:'flex-end'}}>
-              <img style={{width:"120px"}} src={img2}/>
+            <Alert
+              style={{
+                backgroundColor: '#E9F7E8',
+                border: '#E9F7E8',
+                borderRadius: '0',
+                display: 'flex',
+                alignItems: 'flex-end',
+              }}
+            >
+              <img style={{ width: '120px' }} src={img2} />
               <Row>
-                <h6 style={{color:'black'}}>Decorative Plants</h6>
-                <hr/>
-                <p style={{color:'black', fontSize:'10px'}}>Jual  Tanaman hias mencakup baik berbentuk terna, merambat, semak, perdu, ataupun pohon.</p>
+                <h6 style={{ color: 'black' }}>Decorative Plants</h6>
+                <hr />
+                <p style={{ color: 'black', fontSize: '10px' }}>
+                  Jual Tanaman hias mencakup baik berbentuk terna, merambat, semak, perdu, ataupun
+                  pohon.
+                </p>
               </Row>
             </Alert>
           </Col>
         </Row>
-        <Row className="justify-content">
+        <Row className='justify-content'>
           {loading ? (
             <h4>loading...</h4>
-          ):(
-          tanamanHias.filter((value) =>{
-            if(searchNama === ""){
-              return value
-            }else if(value.item.toLowerCase().include(searchNama.toLowerCase())){
-              return value
-            }
-          }).map((item, index) => (
-            <TanamanHiasItem tanamanHias={item} ></TanamanHiasItem>)
-          ))}
+          ) : (
+            tanamanHiasFound.map((item, index) => (
+              <TanamanHiasItem key={index} tanamanHias={item} />
+            ))
+          )}
         </Row>
       </Container>
     </div>
