@@ -2,6 +2,7 @@ import React from 'react'
 import {Alert,Row,Col} from "react-bootstrap"
 import poto1 from "../../assets/1.jpg";
 import CoutdownRincian from "./CoutdownRincian"
+import CardRincian from './CardRincian';
 
 const Rincian = () => {
   const endTime=new Date().getTime() + 600000 *24;
@@ -19,21 +20,11 @@ const Rincian = () => {
           <p>{`${hours}:${minutes}:${second}`}</p>
           {/* <button onClick={() => setEndTime(endTime)}>RESET</button> */}
           <hr />
-          <p style={{textAlign:'left'}}><a href="https://react-bootstrap.github.io/components/overlays/#tooltips">Punya kode voucher?</a></p>
-          <hr />
-          <Alert >
-            <Row>
-              <Col lg={3} style={{textAlign:'left'}}>
-              <img src={poto1} style={{width:"100px"}}/>
-              </Col>
-              <Col style={{display:'flex', alignItems:'center'}}>
-              <h5>hai</h5>
-              </Col>
-            </Row>
-            </Alert>
-            </Alert>
+          
+      <CardRincian />
+      </Alert>
     </div>
-  )
-}
+  );
+};
 
-export default Rincian
+export default Rincian;

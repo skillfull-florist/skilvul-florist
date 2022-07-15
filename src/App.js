@@ -20,8 +20,8 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="App-container">
-        <div className="App-content">
+      <div className='App-container'>
+        <div className='App-content'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="buket" element={<Buket />} />
@@ -42,7 +42,7 @@ function App() {
           </Routes>
         </div>
       </div>
-      <Footer className="App-footer" />
+      <Footer className='App-footer' />
     </Router>
   );
 }
@@ -51,17 +51,17 @@ function NotFound() {
   return (
     <div
       style={{
-        display: "flex",
+        display: 'flex',
         margin: 128,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
       }}
     >
       <h2>Cannot find what you are looking for</h2>
       <br />
       <br />
-      <img src={NotFoundImg} alt="404" width="480px" />
+      <img src={NotFoundImg} alt='404' width='480px' />
     </div>
   );
 }
