@@ -12,7 +12,9 @@ import Register from "./components/login/Register";
 import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
 import Transaksi from "./components/transaksi/Transaksi";
-import Rincian from "./components/transaksi/Rincian"
+import Rincian from "./components/transaksi/Rincian";
+import TransaksiBerhasil from "./components/transaksi/TransaksiBerhasil";
+import Riwayatpesanan from "./components/riwayat/Riwayatpesanan"
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
               <Route path="services" element={<Services />} />
               <Route path="transaksi" element={<Transaksi/>}/>
               <Route path="rincian" element={<Rincian/>}/>
+              <Route path="berhasil" element={<TransaksiBerhasil/>}/>
+              <Route path="riwayat" element={<Riwayatpesanan/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
