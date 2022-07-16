@@ -31,12 +31,6 @@ export default function NavBar() {
               <LinkContainer to='/'>
                 <Nav.Link>Home</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/products'>
-                <Nav.Link>Products</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to='/services'>
-                <Nav.Link>Services</Nav.Link>
-              </LinkContainer>
               <LinkContainer to='/about'>
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
