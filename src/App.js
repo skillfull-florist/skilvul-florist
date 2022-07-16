@@ -14,6 +14,9 @@ import Buket from './components/buket/Buket';
 import TanamanHias from './components/tanamanhias/TanamanHias';
 import Transaksi from './components/transaksi/Transaksi';
 import Profil from './components/profil/Profil';
+import Rincian from './components/transaksi/Rincian';
+import TransaksiBerhasil from './components/transaksi/TransaksiBerhasil';
+import Riwayatpesanan from './components/riwayat/Riwayatpesanan';
 
 function App() {
   return (
@@ -31,6 +34,31 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Transaksi />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path='rincian'
+              element={
+                <ProtectedRoute>
+                  <Rincian />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path='berhasil'
+              element={
+                <ProtectedRoute>
+                  <TransaksiBerhasil />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path='riwayat'
+              element={
+                <ProtectedRoute>
+                  <Riwayatpesanan />
                 </ProtectedRoute>
               }
             />
