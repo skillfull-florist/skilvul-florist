@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Col, Row, Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -24,12 +25,15 @@ export default function App() {
         </Form.Group>
       </Container>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div
+        className='text-center p-3 text-white'
+        style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+      >
         &copy; {new Date().getFullYear()} Copyright
         <br />
-        <a className='text-white' href='/'>
-          skilvul-florist.com
-        </a>
+        <Link className='text-white' to='/'>
+          <p>skilvul-florist.com</p>
+        </Link>
       </div>
     </Navbar>
   );
