@@ -18,7 +18,7 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
             <Card.Title onClick={() => setModalShow(true)}>{tanamanHias.nama}</Card.Title>
             <ModalTanamanHias
               show={modalShow}
-              tanamanHias={tanamanHias}
+              tanamanhias={tanamanHias}
               onHide={() => setModalShow(false)}
             />
             <Card.Text>{tanamanHias.harga}</Card.Text>

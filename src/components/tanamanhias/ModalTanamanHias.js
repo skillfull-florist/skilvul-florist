@@ -8,13 +8,13 @@ export default function ModalTanamanHias(props) {
         <Modal.Title id='contained-modal-title-vcenter'>Detail Produk</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h2 className='text-center'>{props.tanamanHias.nama}</h2>
+        <h2 className='text-center'>{props.tanamanhias.nama}</h2>
         <Row>
           <Col md={4}>
-            <img src={props.tanamanHias.gambar} width={200} alt='tanaman hias' />
+            <img src={props.tanamanhias.gambar} width={200} alt='tanaman hias' />
           </Col>
           <Col md={8}>
-            <p>{props.tanamanHias.deskripsi}</p>
+            <p>{props.tanamanhias.deskripsi}</p>
           </Col>
         </Row>
       </Modal.Body>
