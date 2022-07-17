@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import "./keranjang.css"
 const Counter = () => {
   const [counter, setCounter] = useState(0);
 
@@ -18,9 +18,10 @@ const Counter = () => {
 
 
 
-    <p> <button onClick={decrement}>-</button>
+    <p>
+      <button className="jumlah" onClick={decrement}>-</button>
       {counter}
-      <button onClick={increment}>+</button>
+      <button className="jumlah" onClick={increment}>+</button>
     </p>
 
   );

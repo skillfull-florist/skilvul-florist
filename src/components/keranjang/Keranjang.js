@@ -6,12 +6,12 @@ import "./keranjang.css"
 const Keranjang = () => {
     return (
         <Container fluid>
-            <Row>
+            <Row className='pt-2'>
                 <Col md={12}>
                     <h1 className="keranjang">Keranjang</h1>
                 </Col>
             </Row>
-            <Row>
+            <Row className='pt-5'>
                 <Col md={12}>
 
                     <Table responsive>
@@ -40,9 +40,7 @@ const Keranjang = () => {
                                 <td>Rp 600.000</td>
                                 <td><Counter /></td>
                                 <td>RP 600.000</td>
-                                <td><a className="btn hapus" href="#"><img
-                                    src="https://st3.depositphotos.com/1216158/12689/v/450/depositphotos_126897226-stock-illustration-prohibition-restriction-delete-icon.jpg"
-                                    alt="Hapus" width="20px" /></a>
+                                <td>   <Button href="#" className="btn" style={{ color: "red" }}>Hapus</Button>
                                 </td>
                             </tr>
                             <tr>
@@ -58,9 +56,7 @@ const Keranjang = () => {
                                 <td>Rp 600.000</td>
                                 <td><Counter /></td>
                                 <td>RP 600.000</td>
-                                <td><a className="btn hapus" href="#"><img
-                                    src="https://st3.depositphotos.com/1216158/12689/v/450/depositphotos_126897226-stock-illustration-prohibition-restriction-delete-icon.jpg"
-                                    alt="Hapus" width="20px" /></a>
+                                <td>   <Button href="#" className="btn" style={{ color: "red" }}>Hapus</Button>
                                 </td>
                             </tr>
                         </tbody>
@@ -84,7 +80,7 @@ const Keranjang = () => {
                             </tr>
                             <tr className="position-center">
                                 <td colSpan={2}>
-                                    <Button href="#" className="btn btn-success ">Beli</Button>
+                                    <Button href="#" >Beli</Button>
                                 </td>
                             </tr>
                         </tbody>
