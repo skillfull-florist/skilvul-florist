@@ -5,14 +5,19 @@ export default function About() {
     <div
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         margin: 5,
+        marginbottom: 10,
       }}
     >
-      <h2 style={{margin: 5}}>Who are we?</h2>
-      <Link to="description" style={{margin: 8, textDecoration: 'none'}}>Description</Link>
-      <Link to="services" style={{margin: 8, textDecoration: 'none'}}>Services</Link>
+      <h2 style={{ margin: 5 }}>Who are we?</h2>
+      <Link to="description" style={{ margin: 8, textDecoration: "none" }}>
+        Description
+      </Link>
+      <Link to="services" style={{ margin: 8, textDecoration: "none" }}>
+        Services
+      </Link>
       <Outlet />
     </div>
   );
-};
+}
