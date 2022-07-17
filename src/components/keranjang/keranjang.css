@@ -1,0 +1,19 @@
+.keranjang {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 59px;
+    color: black;
+    text-align: center;
+}
+
+.gambar-produk {
+    width: 170px;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+
+.hapus {
+    border-radius: 90px;
+}
