@@ -21,6 +21,7 @@ export const BuketItem = ({ buket }) => {
           nama: buket.nama,
           harga: buket.harga,
           gambar: buket.gambar,
+          sisa: buket.sisa,
           tipe: 'buket',
         },
       });
