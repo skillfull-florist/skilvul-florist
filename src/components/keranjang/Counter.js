@@ -1,29 +1,26 @@
-import React from "react";
-import { useState } from "react";
-import "./keranjang.css"
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+import './Keranjang.css';
 
-
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-
-  const decrement = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
-    };
-  };
+const Counter = ({ handleIncrement, handleDecrement, handelChange, jumlah = 0 }) => {
   return (
-
-
-
-    <p>
-      <button className="jumlah" onClick={decrement}>-</button>
-      {counter}
-      <button className="jumlah" onClick={increment}>+</button>
-    </p>
-
+    <div className='d-flex align-items-center'>
+      <button className='jumlah' onClick={handleDecrement}>
+        -
+      </button>
+      <span>
+        <input
+          style={{ width: '2.5em' }}
+          type='number'
+          className='form-control text-center p-1'
+          placeholder='0'
+          onFocus={(ev) => ev.target.select()}
+          value={jumlah}
+          onChange={handelChange}
+        />
+      </span>
+      <button className='jumlah' onClick={handleIncrement}>
+        +
+      </button>
+    </div>
   );
 };
 

@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import { AuthContext } from './../../context/AuthContext';
-import { LOGIN } from './../../context/ContextConsts';
-import * as Helper from './LoginHelper';
+import { AuthContext } from './../../contexts/AuthContext';
+import { LOGIN } from './../../contexts/ContextConsts';
+import * as Helper from './../../helpers/LoginHelper';
 
 function Login({ from }) {
   const navigate = useNavigate();

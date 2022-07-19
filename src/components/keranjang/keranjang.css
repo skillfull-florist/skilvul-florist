@@ -1,21 +1,28 @@
 .keranjang {
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 59px;
-    color: black;
-    text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 59px;
+  color: black;
+  text-align: center;
 }
 
 .gambar-produk {
-    width: 170px;
-    height: auto;
-    border-radius: 12px;
+  width: 72px;
+  height: auto;
+  border-radius: 12px;
+  filter: saturate(1.5);
 }
 
-
-
-
+.gambar-produk:hover {
+  opacity: 0.7;
+}
 
 .jumlah {
-    border-radius: 90%;
+  border-radius: 12%;
+  margin: 4px;
+}
+
+#tabel-keranjang th,
+td {
+  vertical-align: middle;
 }

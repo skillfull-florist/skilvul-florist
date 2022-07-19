@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import * as Helper from './LoginHelper';
+import * as Helper from './../../helpers/LoginHelper';
 
 function Register() {
   const navigate = useNavigate();
