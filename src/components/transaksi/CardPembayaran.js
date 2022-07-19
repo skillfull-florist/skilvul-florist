@@ -72,11 +72,6 @@ const CardPembayaran = ({ produk }) => {
         }}
       >
         <Alert.Heading style={{ textAlign: 'left' }}>Pilih Metode Pembayaran</Alert.Heading> <hr />
-        <Alert style={myStyle}>
-          <p style={{ textAlign: 'left' }}>
-            <input type='checkbox' /> Bayar sebagian dengan saldo. Saldo anda: Rp 90.000
-          </p>
-        </Alert>
         <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
         <MyVerticallyCenteredModal1 show={modalShow1} onHide={() => setModalShow1(false)} />
         <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />

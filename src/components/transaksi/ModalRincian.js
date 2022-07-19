@@ -1,6 +1,7 @@
 import React from 'react'
 import {Modal, Button } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom';
+import qrcode from "../../assets/qr.png"
 
     function ModalRincian(props) {
         const navigate = useNavigate();
@@ -19,14 +20,10 @@ import { useNavigate } from 'react-router-dom';
         </Modal.Header>
         <Modal.Body>
           <h5>Mohon baca terlebih dahulu :</h5>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+          <img src={qrcode} style={{alignItems:"center"}}/>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => navigate('/berhasil')}>Ok</Button>
+          <Button onClick={() => navigate('/berhasil')}>Selesai</Button>
         </Modal.Footer>
       </Modal>
     );

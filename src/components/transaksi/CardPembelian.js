@@ -48,7 +48,7 @@ const CardPembelian = ({ produk }) => {
             <Col style={{ textAlign: 'left' }}>
               <p>Biaya Kirim & Penanganan:</p>
             </Col>
-            <Col style={{ textAlign: 'Right' }}>Rp 40.000</Col>
+            <Col style={{ textAlign: 'Right' }}>Rp 40000</Col>
           </Row>
           <Row>
             <Col style={{ textAlign: 'left' }}>
@@ -60,7 +60,7 @@ const CardPembelian = ({ produk }) => {
             <Col style={{ textAlign: 'left' }}>
               <p>Biaya Pelayanan:</p>
             </Col>
-            <Col style={{ textAlign: 'Right' }}>Rp 2.500</Col>
+            <Col style={{ textAlign: 'Right' }}>Rp 2500</Col>
           </Row>
         </Alert>
         <hr />
@@ -69,7 +69,7 @@ const CardPembelian = ({ produk }) => {
             <p>Total Harga:</p>
           </Col>
           <Col style={{ textAlign: 'Right', color: 'red' }}>
-            <b>Rp {produk.harga * 2}</b>
+            <b>Rp {produk.harga +40000+2500+500}</b>
           </Col>
         </Row>
 

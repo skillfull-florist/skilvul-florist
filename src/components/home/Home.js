@@ -1,13 +1,12 @@
 import React from "react";
 import HomeCarousel from "./Carousel";
-import Kategori from "./Kategori";
+import "./Home.css"
+import {Alert} from "react-bootstrap"
 
 const Home = () => {
   return (
     <div>
       <HomeCarousel />
-      <br />
-      <Kategori />
     </div>
   );
 };
