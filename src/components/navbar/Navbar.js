@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { AuthContext } from './../../context/AuthContext';
+import { AuthContext } from './../../contexts/AuthContext';
 import { LinkContainer } from 'react-router-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { LOGOUT } from './../../context/ContextConsts';
+import { LOGOUT } from './../../contexts/ContextConsts';
 
 export default function NavBar() {
   const { auth, dispatch } = useContext(AuthContext);

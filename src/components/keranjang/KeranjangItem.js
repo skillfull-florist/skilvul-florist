@@ -1,24 +1,26 @@
 import { useContext, useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Counter from './Counter';
-import { KeranjangContext } from './../../context/KeranjangContext';
+import { KeranjangContext } from './../../contexts/KeranjangContext';
 import {
   INCREASE_PRODUCT,
   DECREASE_PRODUCT,
   SET_PRODUCT_COUNT,
   DELETE_PRODUCT,
-} from './../../context/ContextConsts';
+} from './../../contexts/ContextConsts';
 
 const KeranjangItem = ({ produk }) => {
   const { keranjang, dispatch } = useContext(KeranjangContext);
   const [jumlah, setJumlah] = useState(0);
 
   useEffect(() => {
-    const selectedProduk = keranjang.data.filter((item) => item.idProduk === produk.idProduk);
+    const selectedProduk = keranjang.data.filter(
+      (item) => item.idProduk === produk.idProduk && item.tipe === produk.tipe,
+    );
     if (selectedProduk.length === 1) {
       setJumlah(selectedProduk[0].jumlah);
     }
-  }, [keranjang.data, produk.idProduk]);
+  }, [keranjang.data, produk.idProduk, produk.tipe]);
 
   const handleIncrement = () => {
     setJumlah(jumlah + 1);
@@ -66,10 +68,10 @@ const KeranjangItem = ({ produk }) => {
   return (
     <>
       <tr>
-        <td>
+        <td className='text-center'>
           <img className='gambar-produk' src={produk.gambar} alt={produk.nama} />
         </td>
-        <td>
+        <td className='text-start'>
           <h6>{produk.nama}</h6>
           <small>{produk.jumlah} buah</small>
         </td>

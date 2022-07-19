@@ -1,4 +1,4 @@
-import { useReducer, createContext } from 'react';
+import { useEffect, useReducer, createContext } from 'react';
 import {
   AUTHENTICATED,
   CURRENT_USER,
@@ -10,12 +10,13 @@ import {
   DECREASE_PRODUCT,
   SET_PRODUCT_COUNT,
 } from './ContextConsts';
-import { useEffect } from 'react';
+import * as Helper from './../helpers/KeranjangHelper';
 
 export const KeranjangContext = createContext();
 
 /* id: '', // id keranjang
   idUser: 'anon', // id user pemilik keranjang
+  remainingProducts: [],
   data: [
     // data produk di keranjang
     {
@@ -23,7 +24,6 @@ export const KeranjangContext = createContext();
       nama: '', // nama produk
       gambar: '', // url gambar
       jumlah: '', // jumlah produk
-      sisa: '', // sisa produk
       harga: '', // harga produk
       tipe: '', // tipe produk, buket / tanamanhias
     },
@@ -41,7 +41,9 @@ export const keranjangReducer = (state, action) => {
         ...action.payload,
       };
     case ADD_NEW_PRODUCT:
-      const productFound = state.data.filter((item) => item.idProduk === action.payload.idProduk);
+      const productFound = state.data.filter(
+        (item) => item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe,
+      );
 
       if (productFound.length === 0) {
         const user = JSON.parse(localStorage.getItem(CURRENT_USER));
@@ -73,7 +75,7 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk) {
+            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
               return {
                 ...item,
                 jumlah: item.jumlah + 1,
@@ -81,12 +83,22 @@ export const keranjangReducer = (state, action) => {
             }
             return item;
           });
+
           const newKeranjang = {
             ...state,
             data: newProductData,
           };
 
-          localStorage.setItem(KERANJANG, JSON.stringify(newKeranjang));
+          Helper.putKeranjangById(newKeranjang.id, newKeranjang)
+            .then((data) => {
+              const newKeranjangFromApi = data;
+              localStorage.setItem(KERANJANG, JSON.stringify(newKeranjangFromApi));
+            })
+            .catch((err) => {
+              // keranjang tidak ditemukan
+              console.error(err);
+            });
+
           return newKeranjang;
         })(),
       };
@@ -94,7 +106,7 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk) {
+            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
               if (item.jumlah > 1) {
                 return {
                   ...item,
@@ -109,7 +121,16 @@ export const keranjangReducer = (state, action) => {
             data: newProductData,
           };
 
-          localStorage.setItem(KERANJANG, JSON.stringify(newKeranjang));
+          Helper.putKeranjangById(newKeranjang.id, newKeranjang)
+            .then((data) => {
+              const newKeranjangFromApi = data;
+              localStorage.setItem(KERANJANG, JSON.stringify(newKeranjangFromApi));
+            })
+            .catch((err) => {
+              // keranjang tidak ditemukan
+              console.error(err);
+            });
+
           return newKeranjang;
         })(),
       };
@@ -117,7 +138,7 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk) {
+            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
               if (action.payload.jumlah > 0 && item.jumlah !== action.payload.jumlah) {
                 return {
                   ...item,
@@ -161,23 +182,48 @@ const KeranjangContextProvider = (props) => {
   const [keranjang, dispatch] = useReducer(keranjangReducer, keranjangInitialState);
 
   useEffect(() => {
-    const keranjangLocal = JSON.parse(localStorage.getItem(KERANJANG));
-
-    if (keranjangLocal !== null) {
+    const isAuthenticated = JSON.parse(localStorage.getItem(AUTHENTICATED));
+    if (isAuthenticated) {
       const user = JSON.parse(localStorage.getItem(CURRENT_USER));
-      const isAuthenticated = JSON.parse(localStorage.getItem(AUTHENTICATED));
+      Helper.getKeranjangByUserId(user.id)
+        .then((data) => {
+          const keranjangFromApi = data;
+          localStorage.setItem(KERANJANG, JSON.stringify(keranjangFromApi));
 
-      if (isAuthenticated) {
-        keranjangLocal.idUser = user.id;
-        localStorage.setItem(KERANJANG, JSON.stringify(keranjangLocal));
+          dispatch({
+            type: ADD_KERANJANG,
+            payload: keranjangFromApi,
+          });
+        })
+        .catch((err) => {
+          // keranjang tidak ditemukan
+          if (err.response.status === 500) {
+            const keranjangLocalToApi = JSON.parse(localStorage.getItem(KERANJANG));
+
+            if (keranjangLocalToApi !== null) {
+              keranjangLocalToApi.idUser = user.id;
+              Helper.postKeranjang(keranjangLocalToApi).then((data) => {
+                localStorage.setItem(KERANJANG, JSON.stringify(data));
+                dispatch({
+                  type: ADD_KERANJANG,
+                  payload: data,
+                });
+              });
+            }
+          }
+        });
+    } else {
+      const keranjangLocal = JSON.parse(localStorage.getItem(KERANJANG));
+
+      if (keranjangLocal !== null) {
+        dispatch({
+          type: ADD_KERANJANG,
+          payload: keranjangLocal,
+        });
       }
-
-      dispatch({
-        type: ADD_KERANJANG,
-        payload: keranjangLocal,
-      });
     }
   }, []);
+
   return (
     <KeranjangContext.Provider
       value={{
