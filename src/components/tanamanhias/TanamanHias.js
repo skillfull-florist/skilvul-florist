@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // pengganti fetch
-import { Card, Container, Row, Col, Alert } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import mockapi from './../../apis/mockapi';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { TanamanHiasItem } from './TanamanHiasItem';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
@@ -35,9 +35,7 @@ const TanamanHias = () => {
     const getDataTanamanHias = async () => {
       setLoading(true);
       // axios
-      const result = await axios.get(
-        'https://62bd2977bac21839b6fd61be.mockapi.io/api/tanamanhias/',
-      );
+      const result = await mockapi.get('/tanamanhias/');
 
       setTanamanHiasAll(result.data);
       setTanamanHiasFound(result.data);
@@ -67,7 +65,7 @@ const TanamanHias = () => {
                 alignItems: 'flex-end',
               }}
             >
-              <img style={{ width: '120px' }} src={img1} />
+              <img style={{ width: '120px' }} src={img1} alt='buket' />
               <Row>
                 <h6 style={{ color: 'black' }}>Hand Bouquet</h6>
                 <hr />
@@ -88,7 +86,7 @@ const TanamanHias = () => {
                 alignItems: 'flex-end',
               }}
             >
-              <img style={{ width: '120px' }} src={img2} />
+              <img style={{ width: '120px' }} src={img2} alt='hias' />
               <Row>
                 <h6 style={{ color: 'black' }}>Decorative Plants</h6>
                 <hr />

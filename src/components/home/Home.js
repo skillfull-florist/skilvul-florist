@@ -1,7 +1,6 @@
-import React from "react";
-import HomeCarousel from "./Carousel";
-import "./Home.css"
-import {Alert} from "react-bootstrap"
+import React from 'react';
+import HomeCarousel from './Carousel';
+import Kategori from './Kategori';
 
 const Home = () => {
   return (

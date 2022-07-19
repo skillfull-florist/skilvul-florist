@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // pengganti fetch
+import { useState, useEffect } from 'react';
+import mockapi from './../../apis/mockapi';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { BuketItem } from './BuketItem';
 import img1 from '../../assets/buket.png';
@@ -35,7 +35,7 @@ const Buket = () => {
     const getDataBuket = async () => {
       setLoading(true);
       // axios
-      const result = await axios.get('https://62bd2977bac21839b6fd61be.mockapi.io/api/buket/');
+      const result = await mockapi.get('/buket/');
       setBuketsAll(result.data);
       setBuketsFound(result.data);
       setLoading(false);

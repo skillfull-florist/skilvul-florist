@@ -43,7 +43,7 @@ const CardRincian = () => {
             <hr />
             <Alert style={myStyle}>
               <Row>
-                <Col lg={3} style={{ textAlign: 'left' }}>
+                <Col lg={2} style={{ textAlign: 'right' }}>
                   <img src={dataBeli.produk.gambar} style={{ width: '100px' }} alt='produk' />
                 </Col>
                 <Col style={{ display: 'flex', alignItems: 'center' }}>
@@ -114,9 +114,9 @@ const CardRincian = () => {
               <Button
                 onClick={() => setModalShow(true)}
                 // onClick={handleLanjut}
-                variant='outline-danger'
+                variant='outline'
                 size='lg'
-                style={{ height: '50px' }}
+                style={{ height: '50px',color:"#67A478", border:"1px solid #67A478"}}
               >
                 <h5 style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>
                   Lanjutkan pembayaran

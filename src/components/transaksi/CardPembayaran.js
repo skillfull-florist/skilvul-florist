@@ -33,22 +33,6 @@ const CardPembayaran = ({ produk }) => {
     navigate('/rincian');
   };
 
-  // useEffect(() => {
-  //   if (Object.keys(formKosong).length === 0 && isLengkap) {
-  //     console.log(dataBeli);
-  //   }
-  // }, [formKosong]);
-
-  // const validasi = (nilai) => {
-  //   const errors = {};
-  //   if (!nilai.pembayaran) {
-  //     errors.pembayaran = "Email Tidak Boleh Kosong";
-  //   }else if(){
-  //     navigate('/rincian');
-  //   }
-  //   return errors;
-  // }
-
   const myStyle = {
     backgroundColor: '#fff',
     color: 'black',
@@ -144,9 +128,9 @@ const CardPembayaran = ({ produk }) => {
         <div className='d-grid gap-2'>
           <Button
             onClick={handleSubmit}
-            variant='outline-danger'
+            variant='outline'
             size='lg'
-            style={{ height: '50px' }}
+            style={{ height: '50px', color:"#67A478", border:"1px solid #67A478"}}
           >
             <p style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>Buat Pesanan</p>
           </Button>

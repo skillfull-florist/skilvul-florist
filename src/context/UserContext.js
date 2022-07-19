@@ -1,22 +1,26 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext } from 'react';
+import { CURRENT_USER } from './ContextConsts';
 
 export const UserContext = createContext();
 
-export const CURRENT_USER = "currentUser";
-
 const UserContextProvider = (props) => {
   const [user, setUser] = useState({
-    id: -1,
-    username: "",
-    avatar: "",
-    email: "",
-    password: "",
-    isLogin: false,
+    id: '',
+    username: '',
+    avatar: '',
+    email: '',
+    password: '',
   });
 
   useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER));
-    setUser(currentUser);
+    let currentUser = null;
+    const currentUserData = localStorage.getItem(CURRENT_USER);
+    if (currentUserData !== 'undefined') {
+      currentUser = JSON.parse(currentUserData);
+    }
+    if (currentUser !== null) {
+      setUser(currentUser);
+    }
   }, []);
 
   return <UserContext.Provider value={{ user }}>{props.children}</UserContext.Provider>;

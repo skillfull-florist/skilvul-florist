@@ -15,15 +15,14 @@ import qrcode from "../../assets/qr.png"
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <p>Ketentuan</p>
+            <p>Scan kode QR dibawah</p>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h5>Mohon baca terlebih dahulu :</h5>
           <img src={qrcode} style={{alignItems:"center"}}/>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => navigate('/berhasil')}>Selesai</Button>
+          <Button style={{backgroundColor:"#67A478"}}onClick={() => navigate('/berhasil')}>Selesai</Button>
         </Modal.Footer>
       </Modal>
     );

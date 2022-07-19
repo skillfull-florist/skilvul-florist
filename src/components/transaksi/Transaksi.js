@@ -1,15 +1,16 @@
-import { Row, Col } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import mockapi from './../../apis/mockapi';
 import CardPembayaran from './CardPembayaran';
 import CardPembelian from './CardPembelian';
-import mockapi from './../../apis/mocapi';
-
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 function Transaksi() {
-  const [produk, setProduk] = useState([]);
   const params = useParams();
+  const [produk, setProduk] = useState([]);
+
   useEffect(() => {
-    const getTanamanHiasById = async () => {
+    const getProdukById = async () => {
       // axios
       let url = '';
       if (params.type === 'buket') {
@@ -25,7 +26,8 @@ function Transaksi() {
       setProduk(result.data);
     };
 
-    getTanamanHiasById();
+
+    getProdukById();
   }, [params]);
 
   return (
