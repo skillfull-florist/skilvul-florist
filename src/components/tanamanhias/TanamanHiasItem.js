@@ -31,7 +31,9 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
         <Card className='card text-dark' id='card'>
           <Card.Img src={tanamanHias.gambar} height='200' />
           <Card.Body className='card-body'>
-            <Card.Title onClick={() => setModalShow(true)}>{tanamanHias.nama}</Card.Title>
+            <Card.Title onClick={() => setModalShow(true)}>
+              {tanamanHias.nama}
+            </Card.Title>
             <ModalTanamanHias
               show={modalShow}
               tanamanhias={tanamanHias}
@@ -61,4 +63,3 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
     </Col>
   );
 };
-

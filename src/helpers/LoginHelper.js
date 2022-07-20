@@ -5,7 +5,9 @@ const PASSWORD_LENGTH = 8;
 const getUserByEmailAndPassword = async (email, password) => {
   const users = (await mockapi.get('/users')).data;
   if (users.length === 0) return null;
-  const user = users.filter((item) => item.email === email && item.password === password);
+  const user = users.filter(
+    (item) => item.email === email && item.password === password,
+  );
   if (user.length === 0) return null;
 
   return user[0];

@@ -1,34 +1,32 @@
-import {React, useState, useEffect} from 'react'
+import { React, useState, useEffect } from 'react';
 
-const calTimeLeft = t => {
-    if (!t) return 0;
+const calTimeLeft = (t) => {
+  if (!t) return 0;
 
-    const left = t - new Date().getTime();
+  const left = t - new Date().getTime();
 
-    if(left<0) return 0;
+  if (left < 0) return 0;
 
-    return left;
-}
+  return left;
+};
 
-export default function CoutdownRincian(endTime){  
-    const [end,setEndTime]=useState(endTime);
-    const[timeLeft, setTimeLeft] = useState(endTime)
+export default function CoutdownRincian(endTime) {
+  const [end, setEndTime] = useState(endTime);
+  const [timeLeft, setTimeLeft] = useState(endTime);
 
-    useEffect(()=> {
-        setTimeLeft(calTimeLeft(end));
+  useEffect(() => {
+    setTimeLeft(calTimeLeft(end));
 
-        const timer = setInterval(() => {
-            const targetLeft= calTimeLeft(end)
-            setTimeLeft(targetLeft)
+    const timer = setInterval(() => {
+      const targetLeft = calTimeLeft(end);
+      setTimeLeft(targetLeft);
 
-            if (targetLeft === 0){
-                clearInterval(timer)
-            }
-        });
-        return () => clearInterval(timer)
-    },[end])
+      if (targetLeft === 0) {
+        clearInterval(timer);
+      }
+    });
+    return () => clearInterval(timer);
+  }, [end]);
 
-    return [timeLeft,setEndTime]
-
-
+  return [timeLeft, setEndTime];
 }

@@ -69,8 +69,9 @@ const Buket = () => {
                 <h6 style={{ color: 'black' }}>Hand Bouquet</h6>
                 <hr />
                 <p style={{ color: 'black', fontSize: '10px' }}>
-                  Jual buket bunga online (hand bouquet) flannel, matahari, lily, & mawar dengan
-                  harga terjangkau di Jakarta Barat untuk acara ulang tahun, wisuda, dll.
+                  Jual buket bunga online (hand bouquet) flannel, matahari, lily, &
+                  mawar dengan harga terjangkau di Jakarta Barat untuk acara ulang
+                  tahun, wisuda, dll.
                 </p>
               </Row>
             </Alert>
@@ -90,8 +91,8 @@ const Buket = () => {
                 <h6 style={{ color: 'black' }}>Decorative Plants</h6>
                 <hr />
                 <p style={{ color: 'black', fontSize: '10px' }}>
-                  Jual Tanaman hias mencakup baik berbentuk terna, merambat, semak, perdu, ataupun
-                  pohon.
+                  Jual Tanaman hias mencakup baik berbentuk terna, merambat, semak,
+                  perdu, ataupun pohon.
                 </p>
               </Row>
             </Alert>

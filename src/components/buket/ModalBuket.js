@@ -4,7 +4,12 @@ import React from 'react';
 
 export default function ModalBuket(props) {
   return (
-    <Modal {...props} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+    <Modal
+      {...props}
+      size='lg'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id='contained-modal-title-vcenter'>Detail Produk</Modal.Title>
       </Modal.Header>

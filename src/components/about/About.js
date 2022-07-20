@@ -8,6 +8,7 @@ export default function About() {
         display: 'flex',
         flexDirection: 'column',
         margin: 5,
+        marginbottom: 10,
       }}
     >
       <Link to='description' style={{ margin: 8, textDecoration: 'none' }}>

@@ -15,9 +15,10 @@ export default function Services() {
             <Card.Body>
               <Container fluid>
                 <Card.Text>
-                  Jelajahi koleksi produk - produk kami untuk semua momen anda. Baik untuk hari
-                  ulang tahun, perayaan, hari spesial, hari berkabung ataupun sekedar hobi dan
-                  untuk koleksi Anda kami siap melayani kebutuhan bunga Anda.
+                  Jelajahi koleksi produk - produk kami untuk semua momen anda. Baik
+                  untuk hari ulang tahun, perayaan, hari spesial, hari berkabung ataupun
+                  sekedar hobi dan untuk koleksi Anda kami siap melayani kebutuhan bunga
+                  Anda.
                 </Card.Text>
               </Container>
             </Card.Body>
@@ -29,8 +30,8 @@ export default function Services() {
           <Card.Body>
             <Container fluid>
               <Card.Text>
-                Dengan pengalaman lebih dari 30 tahun Anda dapat yakin dan percayakan kebutuhan
-                bunga kepada kami.
+                Dengan pengalaman lebih dari 30 tahun Anda dapat yakin dan percayakan
+                kebutuhan bunga kepada kami.
               </Card.Text>
             </Container>
           </Card.Body>
@@ -41,8 +42,8 @@ export default function Services() {
           <Card.Body>
             <Container fluid>
               <Card.Text>
-                Kami bekerjasama dengan desainer karangan bunga terbaik dan bunga segar terpilih
-                dan berkualitas untuk menjamin kepuasan Anda
+                Kami bekerjasama dengan desainer karangan bunga terbaik dan bunga segar
+                terpilih dan berkualitas untuk menjamin kepuasan Anda
               </Card.Text>
             </Container>
           </Card.Body>
