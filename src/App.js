@@ -17,7 +17,7 @@ import Profil from './components/profil/Profil';
 import Rincian from './components/transaksi/Rincian';
 import TransaksiBerhasil from './components/transaksi/TransaksiBerhasil';
 import Riwayatpesanan from './components/riwayat/Riwayatpesanan';
-
+import Keranjang from './components/keranjang/Keranjang';
 function App() {
   return (
     <Router>
@@ -29,6 +29,8 @@ function App() {
             <Route path='buket' element={<Buket />} />
             <Route path='buket/:id' element={<Buket />} />
             <Route path='tanamanhias' element={<TanamanHias />} />
+            {/* KERANJANG */}
+            <Route path='keranjang' element={<Keranjang />} />
             <Route
               path='transaksi/:type/:id'
               element={

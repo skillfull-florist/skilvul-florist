@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import img1 from '../../assets/shopping-cart.png';
 import ModalBuket from './ModalBuket';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
-import { ADD_NEW_PRODUCT } from './../../contexts/ContextConsts';
+import { ADD_NEW_PRODUCT, BUKET } from './../../contexts/ContextConsts';
+
 
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
@@ -17,11 +18,9 @@ export const BuketItem = ({ buket }) => {
       dispatch({
         type: ADD_NEW_PRODUCT,
         payload: {
+          ...buket,
           idProduk: buket.id,
-          nama: buket.nama,
-          harga: buket.harga,
-          gambar: buket.gambar,
-          tipe: 'buket',
+          tipe: BUKET,
         },
       });
     }
