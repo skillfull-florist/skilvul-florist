@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
-    <Navbar bg='primary' variant='dark'>
+    <Navbar as='div' bg='primary' variant='dark'>
       <Container className='p-4 pb-0'>
         <Form.Group action=''>
-          <Row className='d-flex justify-content-center'>
+          <Row className='d-flex align-items-center'>
             <Col size='auto' className='mb-4 mb-md-0'>
-              <p className='pt-2'>
+              <p className='pt-2 text-white'>
                 <strong>Sign up for our newsletter</strong>
               </p>
             </Col>
@@ -19,7 +19,7 @@ export default function App() {
             </Col>
 
             <Col size='auto' className='mb-4 mb-md-0'>
-              <Button variant='outline-primary'>Subscribe</Button>
+              <Button style={{ color: 'black', backgroundColor: '#E9F7E8' }}>Subscribe</Button>
             </Col>
           </Row>
         </Form.Group>
