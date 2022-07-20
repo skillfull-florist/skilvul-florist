@@ -99,7 +99,7 @@ const Buket = () => {
         </Row>
         <Row className='justify-content'>
           {buketsFound.map((item, index) => (
-            <BuketItem key={index} bukets={item} />
+            <BuketItem key={index} buket={item} />
           ))}
         </Row>
       </Container>
