@@ -44,7 +44,9 @@ export const keranjangReducer = (state, action) => {
       };
     case ADD_NEW_PRODUCT:
       const productFound = state.data.filter(
-        (item) => item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe,
+        (item) =>
+          item.idProduk === action.payload.idProduk &&
+          item.tipe === action.payload.tipe,
       );
 
       if (productFound.length === 0) {
@@ -77,7 +79,10 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
+            if (
+              item.idProduk === action.payload.idProduk &&
+              item.tipe === action.payload.tipe
+            ) {
               return {
                 ...item,
                 jumlah: item.jumlah + 1,
@@ -107,7 +112,10 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
+            if (
+              item.idProduk === action.payload.idProduk &&
+              item.tipe === action.payload.tipe
+            ) {
               if (item.jumlah > 1) {
                 return {
                   ...item,
@@ -138,7 +146,10 @@ export const keranjangReducer = (state, action) => {
       return {
         ...(() => {
           const newProductData = state.data.map((item) => {
-            if (item.idProduk === action.payload.idProduk && item.tipe === action.payload.tipe) {
+            if (
+              item.idProduk === action.payload.idProduk &&
+              item.tipe === action.payload.tipe
+            ) {
               if (action.payload.jumlah > 0 && item.jumlah !== action.payload.jumlah) {
                 return {
                   ...item,

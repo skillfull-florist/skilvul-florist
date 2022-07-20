@@ -55,10 +55,22 @@ const CardPembayaran = ({ produk }) => {
           border: '1px solid #418459',
         }}
       >
-        <Alert.Heading style={{ textAlign: 'left' }}>Pilih Metode Pembayaran</Alert.Heading> <hr />
-        <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
-        <MyVerticallyCenteredModal1 show={modalShow1} onHide={() => setModalShow1(false)} />
-        <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
+        <Alert.Heading style={{ textAlign: 'left' }}>
+          Pilih Metode Pembayaran
+        </Alert.Heading>{' '}
+        <hr />
+        <MyVerticallyCenteredModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
+        <MyVerticallyCenteredModal1
+          show={modalShow1}
+          onHide={() => setModalShow1(false)}
+        />
+        <MyVerticallyCenteredModal2
+          show={modalShow2}
+          onHide={() => setModalShow2(false)}
+        />
         <Alert style={myStyle}>
           <p>Pilih metode pembayaran</p>
           <hr />
@@ -83,9 +95,17 @@ const CardPembayaran = ({ produk }) => {
               onChange={handleChange}
             />{' '}
             Transfer Bank &nbsp;
-            <img src={poto1} style={{ width: '80px', marginLeft: '20px' }} alt='poto1' />
+            <img
+              src={poto1}
+              style={{ width: '80px', marginLeft: '20px' }}
+              alt='poto1'
+            />
             &nbsp;
-            <img src={poto3} style={{ width: '100px', marginLeft: '10px' }} alt='poto3' />
+            <img
+              src={poto3}
+              style={{ width: '100px', marginLeft: '10px' }}
+              alt='poto3'
+            />
             &nbsp;
             <img src={poto4} style={{ width: '100px' }} alt='poto4' />
           </p>
@@ -100,9 +120,17 @@ const CardPembayaran = ({ produk }) => {
               onChange={handleChange}
             />{' '}
             Transfer Virtual Akun &nbsp;
-            <img src={poto1} style={{ width: '80px', marginLeft: '20px' }} alt='poto1' />
+            <img
+              src={poto1}
+              style={{ width: '80px', marginLeft: '20px' }}
+              alt='poto1'
+            />
             &nbsp;
-            <img src={poto3} style={{ width: '100px', marginLeft: '10px' }} alt='poto3' />
+            <img
+              src={poto3}
+              style={{ width: '100px', marginLeft: '10px' }}
+              alt='poto3'
+            />
             &nbsp;
             <img src={poto4} style={{ width: '100px' }} alt='poto4' />
           </p>
@@ -112,15 +140,24 @@ const CardPembayaran = ({ produk }) => {
           <p>Pilih jasa kirim anda</p>
           <hr />
           <p style={{ textAlign: 'left' }}>
-            <input type='radio' name='jasakirim' value='grab' onChange={handleChange} /> GRAB{' '}
-            &nbsp;
+            <input type='radio' name='jasakirim' value='grab' onChange={handleChange} />{' '}
+            GRAB &nbsp;
             <img src={grab} style={{ width: '50px' }} alt='grab' />
           </p>
           <hr />
           <p style={{ textAlign: 'left' }}>
-            <input type='radio' name='jasakirim' value='gojek' onChange={handleChange} /> GOJEK{' '}
-            &nbsp;
-            <img src={gojek} style={{ width: '30px', marginLeft: '20px' }} alt='gojek' />
+            <input
+              type='radio'
+              name='jasakirim'
+              value='gojek'
+              onChange={handleChange}
+            />{' '}
+            GOJEK &nbsp;
+            <img
+              src={gojek}
+              style={{ width: '30px', marginLeft: '20px' }}
+              alt='gojek'
+            />
             &nbsp;
           </p>
         </Alert>
@@ -130,7 +167,7 @@ const CardPembayaran = ({ produk }) => {
             onClick={handleSubmit}
             variant='outline'
             size='lg'
-            style={{ height: '50px', color:"#67A478", border:"1px solid #67A478"}}
+            style={{ height: '50px', color: '#67A478', border: '1px solid #67A478' }}
           >
             <p style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>Buat Pesanan</p>
           </Button>

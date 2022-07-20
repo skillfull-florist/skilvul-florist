@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Alert } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import KeranjangItem from './KeranjangItem';
 import { useContext, useState, useEffect } from 'react';
@@ -57,55 +57,66 @@ const Keranjang = () => {
         </div>
       ) : (
         <div>
-          <Row className='pt-2'>
-            <Col md={12}>
-              <h1 className='keranjang'>Keranjang</h1>
-            </Col>
-          </Row>
-          <Row className='pt-5'>
-            <Col md={12}>
-              <Table responsive id='tabel-keranjang'>
-                <thead>
-                  <tr>
-                    <th>Gambar</th>
-                    <th>Nama Produk</th>
-                    <th>Harga Satuan</th>
-                    <th>Jumlah</th>
-                    <th>Harga</th>
-                    <th>Hapus</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {keranjang.data.map((item, idx) => (
-                    <KeranjangItem key={idx} produk={item} />
-                  ))}
-                </tbody>
-              </Table>
-            </Col>
-          </Row>
-          <Row>
-            <div className='col-md-5 ms-auto'>
-              <Table responsive>
-                <thead>
-                  <tr>
-                    <th>Total Harga</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Rp {total}</td>
-                  </tr>
-                  <tr className='position-center'>
-                    <td colSpan={2}>
-                      <Button href='#' variant='success'>
-                        Beli
-                      </Button>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </Row>
+          <br/>
+          <Alert
+              style={{
+                backgroundColor: '#fff',
+                border: '2px solid #E9F7E8',
+                borderRadius: '0',
+                alignItems: 'flex-end',
+              }}
+            >
+              <Row className='pt-2'>
+                <Col md={12}>
+                  <h4 className='keranjang'>Keranjang</h4>
+                  <hr/>
+                </Col>
+              </Row>
+              <Row className='pt-2'>
+                <Col md={12}>
+                  <Table responsive id='tabel-keranjang'>
+                    <thead>
+                      <tr>
+                        <th>Gambar</th>
+                        <th>Nama Produk</th>
+                        <th>Harga Satuan</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Hapus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {keranjang.data.map((item, idx) => (
+                        <KeranjangItem key={idx} produk={item} />
+                      ))}
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+              <Row>
+                <div className='col-md-5 ms-auto'>
+                  <Table responsive>
+                    <thead>
+                      <tr>
+                        <th>Total Harga</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Rp {total}</td>
+                      </tr>
+                      <tr className='position-center'>
+                        <td colSpan={2}>
+                          <Button href='#' variant='success'>
+                            Beli
+                          </Button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
+              </Row>
+          </Alert>
         </div>
       )}
     </Container>

@@ -69,11 +69,13 @@ const CardPembelian = ({ produk }) => {
             <p>Total Harga:</p>
           </Col>
           <Col style={{ textAlign: 'Right', color: 'red' }}>
-            <b>Rp {produk.harga +40000+2500+500}</b>
+            <b>Rp {produk.harga + 40000 + 2500 + 500}</b>
           </Col>
         </Row>
 
-        <Alert style={{ backgroundColor: '#E9F7E8', color: 'red', border: '1px solid red' }}>
+        <Alert
+          style={{ backgroundColor: '#E9F7E8', color: 'red', border: '1px solid red' }}
+        >
           Mohon segera lakukan pembayaran!
         </Alert>
       </Alert>

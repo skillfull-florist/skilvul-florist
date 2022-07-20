@@ -1,6 +1,7 @@
 import React from 'react';
 
-const gmapsSrc = 'https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed';
+const gmapsSrc =
+  'https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed';
 
 const gmapsCanvas = {
   overflow: 'hidden',

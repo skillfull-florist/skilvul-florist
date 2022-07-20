@@ -26,7 +26,10 @@ function Register() {
     if (userForm.email !== '' && userForm.username !== '' && userForm !== '') {
       if (Object.keys(formError).length === 0) {
         const newUser = await Helper.registerNewUser(userForm);
-        const user = await Helper.getUserByEmailAndPassword(newUser.email, newUser.password);
+        const user = await Helper.getUserByEmailAndPassword(
+          newUser.email,
+          newUser.password,
+        );
 
         if (user !== null) {
           alert('Registrasi berhasil!');

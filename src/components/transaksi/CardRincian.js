@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Alert, Button, Row, Col } from 'react-bootstrap';
-import ModalRincian from "./ModalRincian";
+import ModalRincian from './ModalRincian';
 
 const QUICK_BUY = 'QUICK_BUY';
 
@@ -44,7 +44,11 @@ const CardRincian = () => {
             <Alert style={myStyle}>
               <Row>
                 <Col lg={2} style={{ textAlign: 'right' }}>
-                  <img src={dataBeli.produk.gambar} style={{ width: '100px' }} alt='produk' />
+                  <img
+                    src={dataBeli.produk.gambar}
+                    style={{ width: '100px' }}
+                    alt='produk'
+                  />
                 </Col>
                 <Col style={{ display: 'flex', alignItems: 'center' }}>
                   <h5>{dataBeli.produk.nama}</h5>
@@ -83,7 +87,7 @@ const CardRincian = () => {
                   <p>Total Harga:</p>
                 </Col>
                 <Col style={{ textAlign: 'Right', color: 'red' }}>
-                  <b>Rp {dataBeli.produk.harga +40000+2500+500}</b>
+                  <b>Rp {dataBeli.produk.harga + 40000 + 2500 + 500}</b>
                 </Col>
               </Row>
             </Alert>
@@ -116,7 +120,11 @@ const CardRincian = () => {
                 // onClick={handleLanjut}
                 variant='outline'
                 size='lg'
-                style={{ height: '50px',color:"#67A478", border:"1px solid #67A478"}}
+                style={{
+                  height: '50px',
+                  color: '#67A478',
+                  border: '1px solid #67A478',
+                }}
               >
                 <h5 style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>
                   Lanjutkan pembayaran

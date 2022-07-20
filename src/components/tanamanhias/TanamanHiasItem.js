@@ -26,12 +26,14 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
     }
   };
   return (
-    <Col mb={3} md={4}>
+    <Col mb={3} md={3}>
       <div className='p-2 m-1 text-white'>
         <Card className='card text-dark' id='card'>
-          <Card.Img src={tanamanHias.gambar} height='300' />
+          <Card.Img src={tanamanHias.gambar} height='200' />
           <Card.Body className='card-body'>
-            <Card.Title onClick={() => setModalShow(true)}>{tanamanHias.nama}</Card.Title>
+            <Card.Title onClick={() => setModalShow(true)}>
+              {tanamanHias.nama}
+            </Card.Title>
             <ModalTanamanHias
               show={modalShow}
               tanamanhias={tanamanHias}
@@ -61,4 +63,3 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
     </Col>
   );
 };
-
