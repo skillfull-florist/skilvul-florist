@@ -1,7 +1,7 @@
-import React from "react";
-import { useContext } from "react";
-import { AuthContext } from "./../../context/AuthContext";
-import { Container, Col, Row, Card } from "react-bootstrap";
+import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from './../../contexts/AuthContext';
+import { Container, Col, Row, Card } from 'react-bootstrap';
 
 const Profil = () => {
   const { auth } = useContext(AuthContext);
@@ -14,8 +14,8 @@ const Profil = () => {
       </>
       <Row>
         <Col>
-          <Card width="200">
-            <Card.Img variant="top" src={auth.user.avatar} width="200" />
+          <Card width='200'>
+            <Card.Img variant='top' src={auth.user.avatar} width='200' />
             <Card.Body>
               <Card.Title>{auth.user.username}</Card.Title>
               <Card.Text>{auth.user.email}</Card.Text>
