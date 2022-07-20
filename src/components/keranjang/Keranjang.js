@@ -11,11 +11,16 @@ const Keranjang = () => {
   const navigate = useNavigate();
   const { keranjang } = useContext(KeranjangContext);
   const [isReady, setIsReady] = useState(false);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(-1);
 
   useEffect(() => {
     setIsReady(false);
-    if (keranjang.data.length > 0) {
+    if (keranjang === undefined) {
+      setTotal(0);
+      setIsReady(true);
+      return;
+    }
+    if (keranjang.data.length > 1) {
       const newTotal = keranjang.data.reduce((sum, item) => {
         if (typeof sum === 'object') {
           return sum.jumlah * sum.harga + item.jumlah * item.harga;
@@ -24,6 +29,13 @@ const Keranjang = () => {
       });
       setTotal(newTotal);
     }
+    if (keranjang.data.length === 1) {
+      setTotal(keranjang.data[0].jumlah * keranjang.data[0].harga);
+    }
+    if (keranjang.data.length === 0) {
+      setTotal(0);
+    }
+
     setIsReady(true);
   }, [keranjang]);
 

@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from './../../contexts/AuthContext';
+import { KeranjangContext, validateKeranjangAPIByUserId } from './../../contexts/KeranjangContext';
 import { LOGIN } from './../../contexts/ContextConsts';
 import * as Helper from './../../helpers/LoginHelper';
 
@@ -11,6 +12,7 @@ function Login({ from }) {
   const [formError, setFormError] = useState({});
   const [lihatPass, setLihatpass] = useState(false);
   const { dispatch } = useContext(AuthContext);
+  const { dispatch: dispatchKeranjang } = useContext(KeranjangContext);
 
   const handleChange = (event) => {
     setUserForm({ ...userForm, [event.target.name]: event.target.value });
@@ -36,6 +38,7 @@ function Login({ from }) {
             type: LOGIN,
             payload: user,
           });
+          validateKeranjangAPIByUserId(user.id, dispatchKeranjang);
           navigate('/');
         } else {
           alert('User tidak ditemukan! Silakan daftar dulu.');

@@ -7,6 +7,7 @@ import {
   DECREASE_PRODUCT,
   SET_PRODUCT_COUNT,
   DELETE_PRODUCT,
+  DELETE_KERANJANG,
 } from './../../contexts/ContextConsts';
 
 const KeranjangItem = ({ produk }) => {
@@ -58,10 +59,16 @@ const KeranjangItem = ({ produk }) => {
 
   const handleDeleteProduct = () => {
     if (window.confirm('Hapus produk ini dari keranjang?') === true) {
-      dispatch({
-        type: DELETE_PRODUCT,
-        payload: produk,
-      });
+      if (keranjang.data.length === 1) {
+        dispatch({
+          type: DELETE_KERANJANG,
+        });
+      } else {
+        dispatch({
+          type: DELETE_PRODUCT,
+          payload: produk,
+        });
+      }
     }
   };
 
@@ -87,7 +94,7 @@ const KeranjangItem = ({ produk }) => {
         <td className='text-end'>Rp {produk.harga * produk.jumlah}</td>
         <td>
           &nbsp;
-          <Button href='#' variant='danger' onClick={handleDeleteProduct}>
+          <Button variant='danger' onClick={handleDeleteProduct}>
             Hapus
           </Button>
         </td>

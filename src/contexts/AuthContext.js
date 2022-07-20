@@ -1,5 +1,5 @@
 import { useReducer, createContext } from 'react';
-import { AUTHENTICATED, CURRENT_USER, LOGIN, LOGOUT, KERANJANG } from './ContextConsts';
+import { AUTHENTICATED, CURRENT_USER, LOGIN, LOGOUT } from './ContextConsts';
 import { useEffect } from 'react';
 
 export const AuthContext = createContext();
@@ -20,7 +20,6 @@ export const authReducer = (state, action) => {
       };
     case LOGOUT:
       localStorage.removeItem(CURRENT_USER);
-      localStorage.removeItem(KERANJANG);
       localStorage.setItem(AUTHENTICATED, false);
       return {
         isAuthenticated: false,

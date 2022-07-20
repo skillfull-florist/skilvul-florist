@@ -9,6 +9,8 @@ import {
   INCREASE_PRODUCT,
   DECREASE_PRODUCT,
   SET_PRODUCT_COUNT,
+  DELETE_KERANJANG,
+  DELETE_KERANJANG_LOCAL,
 } from './ContextConsts';
 import * as Helper from './../helpers/KeranjangHelper';
 
@@ -91,8 +93,7 @@ export const keranjangReducer = (state, action) => {
 
           Helper.putKeranjangById(newKeranjang.id, newKeranjang)
             .then((data) => {
-              const newKeranjangFromApi = data;
-              localStorage.setItem(KERANJANG, JSON.stringify(newKeranjangFromApi));
+              localStorage.setItem(KERANJANG, JSON.stringify(data));
             })
             .catch((err) => {
               // keranjang tidak ditemukan
@@ -123,8 +124,7 @@ export const keranjangReducer = (state, action) => {
 
           Helper.putKeranjangById(newKeranjang.id, newKeranjang)
             .then((data) => {
-              const newKeranjangFromApi = data;
-              localStorage.setItem(KERANJANG, JSON.stringify(newKeranjangFromApi));
+              localStorage.setItem(KERANJANG, JSON.stringify(data));
             })
             .catch((err) => {
               // keranjang tidak ditemukan
@@ -153,7 +153,15 @@ export const keranjangReducer = (state, action) => {
             data: newProductData,
           };
 
-          localStorage.setItem(KERANJANG, JSON.stringify(newKeranjang));
+          Helper.putKeranjangById(newKeranjang.id, newKeranjang)
+            .then((data) => {
+              localStorage.setItem(KERANJANG, JSON.stringify(data));
+            })
+            .catch((err) => {
+              // keranjang tidak ditemukan
+              console.error(err);
+            });
+
           return newKeranjang;
         })(),
       };
@@ -164,18 +172,92 @@ export const keranjangReducer = (state, action) => {
             (item) => item.idProduk !== action.payload.idProduk,
           );
 
-          const newKeranjang = {
-            ...state,
-            data: filteredProductData,
-          };
+          if (filteredProductData.length > 0) {
+            const newKeranjang = {
+              ...state,
+              data: filteredProductData,
+            };
 
-          localStorage.setItem(KERANJANG, JSON.stringify(newKeranjang));
-          return newKeranjang;
+            Helper.putKeranjangById(newKeranjang.id, newKeranjang)
+              .then((data) => {
+                localStorage.setItem(KERANJANG, JSON.stringify(data));
+              })
+              .catch((err) => {
+                // keranjang tidak ditemukan
+                console.error(err);
+              });
+
+            localStorage.setItem(KERANJANG, JSON.stringify(newKeranjang));
+            return newKeranjang;
+          }
+          return { ...state, data: [] };
+        })(),
+      };
+    case DELETE_KERANJANG:
+      return {
+        ...(() => {
+          console.log('delete');
+          Helper.deleteKeranjangById(state.id)
+            .then(() => {
+              localStorage.removeItem(KERANJANG);
+            })
+            .catch((err) => {
+              // keranjang tidak ditemukan
+              console.error(err);
+            });
+          return { ...state, data: [] };
+        })(),
+      };
+    case DELETE_KERANJANG_LOCAL:
+      return {
+        ...(() => {
+          localStorage.removeItem(KERANJANG);
+          return { ...state, data: [] };
         })(),
       };
     default:
       return state;
   }
+};
+
+export const validateKeranjangAPIByUserId = (id, dispatch, keranjang = null) => {
+  Helper.getKeranjangByUserId(id)
+    .then((data) => {
+      const keranjangFromApi = data;
+      console.log(data);
+      localStorage.setItem(KERANJANG, JSON.stringify(keranjangFromApi));
+      dispatch({
+        type: ADD_KERANJANG,
+        payload: keranjangFromApi,
+      });
+    })
+    .catch((err) => {
+      // keranjang tidak ditemukan
+      const keranjangLocalToApi = JSON.parse(localStorage.getItem(KERANJANG));
+
+      if (keranjangLocalToApi !== null) {
+        keranjangLocalToApi.idUser = id;
+        Helper.postKeranjang(keranjangLocalToApi).then((data) => {
+          localStorage.setItem(KERANJANG, JSON.stringify(data));
+          dispatch({
+            type: ADD_KERANJANG,
+            payload: data,
+          });
+        });
+        return;
+      }
+      if (keranjangLocalToApi === null && keranjang !== null) {
+        Helper.postKeranjang(keranjang).then((data) => {
+          localStorage.setItem(KERANJANG, JSON.stringify(data));
+          dispatch({
+            type: ADD_KERANJANG,
+            payload: data,
+          });
+        });
+        return;
+      }
+      localStorage.removeItem(KERANJANG);
+    });
 };
 
 const KeranjangContextProvider = (props) => {
@@ -185,36 +267,10 @@ const KeranjangContextProvider = (props) => {
     const isAuthenticated = JSON.parse(localStorage.getItem(AUTHENTICATED));
     if (isAuthenticated) {
       const user = JSON.parse(localStorage.getItem(CURRENT_USER));
-      Helper.getKeranjangByUserId(user.id)
-        .then((data) => {
-          const keranjangFromApi = data;
-          localStorage.setItem(KERANJANG, JSON.stringify(keranjangFromApi));
-
-          dispatch({
-            type: ADD_KERANJANG,
-            payload: keranjangFromApi,
-          });
-        })
-        .catch((err) => {
-          // keranjang tidak ditemukan
-          if (err.response.status === 500) {
-            const keranjangLocalToApi = JSON.parse(localStorage.getItem(KERANJANG));
-
-            if (keranjangLocalToApi !== null) {
-              keranjangLocalToApi.idUser = user.id;
-              Helper.postKeranjang(keranjangLocalToApi).then((data) => {
-                localStorage.setItem(KERANJANG, JSON.stringify(data));
-                dispatch({
-                  type: ADD_KERANJANG,
-                  payload: data,
-                });
-              });
-            }
-          }
-        });
+      validateKeranjangAPIByUserId(user.id, dispatch);
     } else {
       const keranjangLocal = JSON.parse(localStorage.getItem(KERANJANG));
-
+      console.log(keranjangLocal);
       if (keranjangLocal !== null) {
         dispatch({
           type: ADD_KERANJANG,

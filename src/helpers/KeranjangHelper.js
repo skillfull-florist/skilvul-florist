@@ -1,15 +1,25 @@
 import mockapi from './../apis/mockapi';
 
-export const getKeranjangByUserId = (userId) => {
-  return mockapi.get(`/keranjang/${userId}`).then((res) => res.data);
-};
-
 export const postKeranjang = (payload) => {
   return mockapi.post(`/keranjang`, payload).then((res) => res.data);
 };
 
-export const putKeranjangById = (id, payload) => {
-  return mockapi.put(`/keranjang/${id}`, payload).then((res) => res.data);
+export const putKeranjangById = (idKeranjang, prePayload) => {
+  const { id, ...payload } = prePayload;
+  return mockapi.put(`/keranjang/${idKeranjang}`, payload).then((res) => res.data);
+};
+
+export const deleteKeranjangById = (id) => {
+  return mockapi.delete(`/keranjang/${id}`).then((res) => res.data);
+};
+
+export const getKeranjangByUserId = async (userId) => {
+  const res = await mockapi.get('/keranjang/');
+  const keranjang = res.data.filter((item) => item.idUser === userId);
+  if (keranjang.length > 0) {
+    return keranjang[0];
+  }
+  throw new Error('Keranjang tidak ditemukan');
 };
 
 export const getRemainingProduct = async (id, type) => {
