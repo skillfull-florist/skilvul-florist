@@ -8,10 +8,10 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './theme.css';
 // context
-import ContextProvidersHelper from './context/ContextProvidersHelper';
-import UserContextProvider from './context/UserContext';
-import AuthContextProvider from './context/AuthContext';
-import KeranjangContextProvider from './context/KeranjangContext';
+import ContextProvidersHelper from './contexts/ContextProvidersHelper';
+import UserContextProvider from './contexts/UserContext';
+import AuthContextProvider from './contexts/AuthContext';
+import KeranjangContextProvider from './contexts/KeranjangContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

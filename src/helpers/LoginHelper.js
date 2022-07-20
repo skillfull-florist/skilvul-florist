@@ -1,4 +1,4 @@
-import mockapi from './../../apis/mockapi';
+import mockapi from './../apis/mockapi';
 
 const PASSWORD_LENGTH = 8;
 

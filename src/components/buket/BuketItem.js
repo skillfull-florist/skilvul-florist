@@ -3,8 +3,8 @@ import { Card, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../../assets/shopping-cart.png';
 import ModalBuket from './ModalBuket';
-import { KeranjangContext } from './../../context/KeranjangContext';
-import { ADD_NEW_PRODUCT } from './../../context/ContextConsts';
+import { KeranjangContext } from './../../contexts/KeranjangContext';
+import { ADD_NEW_PRODUCT } from './../../contexts/ContextConsts';
 
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
