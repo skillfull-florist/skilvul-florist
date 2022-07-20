@@ -19,7 +19,7 @@ function HomeCarousel() {
                 marginBottom:"0px"
               }}>
         <Row style={{display:'flex'}}>
-          <Carousel fade>
+          <Carousel fade className=" d-none-none">
             <Carousel.Item>
               <img
                 className="d-block w-100"
