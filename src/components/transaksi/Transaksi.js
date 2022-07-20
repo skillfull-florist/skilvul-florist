@@ -26,6 +26,7 @@ function Transaksi() {
       setProduk(result.data);
     };
 
+
     getProdukById();
   }, [params]);
 

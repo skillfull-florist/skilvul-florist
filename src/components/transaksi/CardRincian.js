@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Alert, Button, Row, Col } from 'react-bootstrap';
-import ModalRincian from "./ModalRincian"
+import ModalRincian from "./ModalRincian";
 
 const QUICK_BUY = 'QUICK_BUY';
 
@@ -43,7 +43,7 @@ const CardRincian = () => {
             <hr />
             <Alert style={myStyle}>
               <Row>
-                <Col lg={3} style={{ textAlign: 'left' }}>
+                <Col lg={2} style={{ textAlign: 'right' }}>
                   <img src={dataBeli.produk.gambar} style={{ width: '100px' }} alt='produk' />
                 </Col>
                 <Col style={{ display: 'flex', alignItems: 'center' }}>
@@ -63,7 +63,7 @@ const CardRincian = () => {
                 <Col style={{ textAlign: 'left' }}>
                   <p>Biaya Kirim & Penanganan:</p>
                 </Col>
-                <Col style={{ textAlign: 'Right' }}>Rp 40.000</Col>
+                <Col style={{ textAlign: 'Right' }}>Rp 40000</Col>
               </Row>
               <Row>
                 <Col style={{ textAlign: 'left' }}>
@@ -75,7 +75,7 @@ const CardRincian = () => {
                 <Col style={{ textAlign: 'left' }}>
                   <p>Biaya Pelayanan:</p>
                 </Col>
-                <Col style={{ textAlign: 'Right' }}>Rp 2.500</Col>
+                <Col style={{ textAlign: 'Right' }}>Rp 2500</Col>
               </Row>
               <hr />
               <Row>
@@ -83,7 +83,7 @@ const CardRincian = () => {
                   <p>Total Harga:</p>
                 </Col>
                 <Col style={{ textAlign: 'Right', color: 'red' }}>
-                  <b>Rp {dataBeli.produk.harga * 2}</b>
+                  <b>Rp {dataBeli.produk.harga +40000+2500+500}</b>
                 </Col>
               </Row>
             </Alert>
@@ -114,9 +114,9 @@ const CardRincian = () => {
               <Button
                 onClick={() => setModalShow(true)}
                 // onClick={handleLanjut}
-                variant='outline-danger'
+                variant='outline'
                 size='lg'
-                style={{ height: '50px' }}
+                style={{ height: '50px',color:"#67A478", border:"1px solid #67A478"}}
               >
                 <h5 style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>
                   Lanjutkan pembayaran

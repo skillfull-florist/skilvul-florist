@@ -41,3 +41,4 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
     </Col>
   );
 };
+

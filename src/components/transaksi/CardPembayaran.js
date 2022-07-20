@@ -1,10 +1,10 @@
 import { Alert, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import poto1 from '../../assets/bca.jpg';
+import poto1 from '../../assets/1.jpg';
 import poto2 from '../../assets/mobile-payment.png';
-import poto3 from '../../assets/bri.png';
-import poto4 from '../../assets/mandiri.jpg';
+import poto3 from '../../assets/2.png';
+import poto4 from '../../assets/3.jpg';
 import gojek from '../../assets/gojek.png';
 import grab from '../../assets/grab.jpg';
 import MyVerticallyCenteredModal from './Modal1';
@@ -33,22 +33,6 @@ const CardPembayaran = ({ produk }) => {
     navigate('/rincian');
   };
 
-  // useEffect(() => {
-  //   if (Object.keys(formKosong).length === 0 && isLengkap) {
-  //     console.log(dataBeli);
-  //   }
-  // }, [formKosong]);
-
-  // const validasi = (nilai) => {
-  //   const errors = {};
-  //   if (!nilai.pembayaran) {
-  //     errors.pembayaran = "Email Tidak Boleh Kosong";
-  //   }else if(){
-  //     navigate('/rincian');
-  //   }
-  //   return errors;
-  // }
-
   const myStyle = {
     backgroundColor: '#fff',
     color: 'black',
@@ -72,11 +56,6 @@ const CardPembayaran = ({ produk }) => {
         }}
       >
         <Alert.Heading style={{ textAlign: 'left' }}>Pilih Metode Pembayaran</Alert.Heading> <hr />
-        <Alert style={myStyle}>
-          <p style={{ textAlign: 'left' }}>
-            <input type='checkbox' /> Bayar sebagian dengan saldo. Saldo anda: Rp 90.000
-          </p>
-        </Alert>
         <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
         <MyVerticallyCenteredModal1 show={modalShow1} onHide={() => setModalShow1(false)} />
         <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
@@ -149,9 +128,9 @@ const CardPembayaran = ({ produk }) => {
         <div className='d-grid gap-2'>
           <Button
             onClick={handleSubmit}
-            variant='outline-danger'
+            variant='outline'
             size='lg'
-            style={{ height: '50px' }}
+            style={{ height: '50px', color:"#67A478", border:"1px solid #67A478"}}
           >
             <p style={{ fontSize: '15px', fontFamily: 'sans-serif' }}>Buat Pesanan</p>
           </Button>
