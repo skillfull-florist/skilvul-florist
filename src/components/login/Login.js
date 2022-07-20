@@ -2,7 +2,10 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from './../../contexts/AuthContext';
-import { KeranjangContext, validateKeranjangAPIByUserId } from './../../contexts/KeranjangContext';
+import {
+  KeranjangContext,
+  validateKeranjangAPIByUserId,
+} from './../../contexts/KeranjangContext';
 import { LOGIN } from './../../contexts/ContextConsts';
 import * as Helper from './../../helpers/LoginHelper';
 
@@ -31,7 +34,10 @@ function Login({ from }) {
     if (userForm.email !== '' && userForm.password !== '') {
       if (Object.keys(formError).length === 0) {
         const userData = { ...userForm };
-        const user = await Helper.getUserByEmailAndPassword(userData.email, userData.password);
+        const user = await Helper.getUserByEmailAndPassword(
+          userData.email,
+          userData.password,
+        );
 
         if (user !== null) {
           dispatch({

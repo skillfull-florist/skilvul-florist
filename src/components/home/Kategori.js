@@ -107,7 +107,8 @@ function Kategori() {
               <h6 style={{ color: 'black' }}>Tanaman Hias</h6>
               <hr />
               <p style={{ color: 'black', fontSize: '10px' }}>
-                Hiasi halaman rumah anda dengan berbagai tanaman hias segar dari toko kami.
+                Hiasi halaman rumah anda dengan berbagai tanaman hias segar dari toko
+                kami.
               </p>
               <Button
                 onClick={() => navigate('/tanamanhias')}
