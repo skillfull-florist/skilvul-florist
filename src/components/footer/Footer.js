@@ -19,7 +19,9 @@ export default function App() {
             </Col>
 
             <Col size='auto' className='mb-4 mb-md-0'>
-              <Button style={{ color: 'black', backgroundColor: '#E9F7E8' }}>Subscribe</Button>
+              <Button style={{ color: 'black', backgroundColor: '#E9F7E8' }}>
+                Subscribe
+              </Button>
             </Col>
           </Row>
         </Form.Group>

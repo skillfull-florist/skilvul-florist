@@ -3,7 +3,12 @@ import { Col, Button, Row } from 'react-bootstrap';
 
 export default function ModalTanamanHias(props) {
   return (
-    <Modal {...props} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+    <Modal
+      {...props}
+      size='lg'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id='contained-modal-title-vcenter'>Detail Produk</Modal.Title>
       </Modal.Header>
