@@ -3,8 +3,9 @@ import { Card, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../../assets/shopping-cart.png';
 import ModalBuket from './ModalBuket';
-import { KeranjangContext } from './../../context/KeranjangContext';
-import { ADD_NEW_PRODUCT } from './../../context/ContextConsts';
+import { KeranjangContext } from './../../contexts/KeranjangContext';
+import { ADD_NEW_PRODUCT, BUKET } from './../../contexts/ContextConsts';
+
 
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
@@ -17,11 +18,9 @@ export const BuketItem = ({ buket }) => {
       dispatch({
         type: ADD_NEW_PRODUCT,
         payload: {
+          ...buket,
           idProduk: buket.id,
-          nama: buket.nama,
-          harga: buket.harga,
-          gambar: buket.gambar,
-          tipe: 'buket',
+          tipe: BUKET,
         },
       });
     }
@@ -29,7 +28,7 @@ export const BuketItem = ({ buket }) => {
   return (
     <Col mb={3} md={4}>
       <div className='pt-4 m-1 text-white'>
-        <Card className='card text-dark border-dark'>
+        <Card className='card text-dark' style={{backgroundColor: "#E9F7E8"}}>
           <Card.Img src={buket.gambar} height='300' />
           <Card.Body>
             <Card.Title onClick={() => setModalShow(true)}>{buket.nama}</Card.Title>
