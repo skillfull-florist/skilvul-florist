@@ -3,19 +3,19 @@ import { Link, Outlet } from "react-router-dom";
 export default function About() {
   return (
     <div
-      sx={{
+      className="vw-100"
+      style={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         margin: 5,
         marginbottom: 10,
       }}
     >
-      <h2 style={{ margin: 5 }}>Who are we?</h2>
       <Link to="description" style={{ margin: 8, textDecoration: "none" }}>
-        Description
+        <h3>Description</h3>
       </Link>
       <Link to="services" style={{ margin: 8, textDecoration: "none" }}>
-        Services
+        <h3>Services</h3>
       </Link>
       <Outlet />
     </div>

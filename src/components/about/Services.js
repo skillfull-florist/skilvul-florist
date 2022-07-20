@@ -1,97 +1,55 @@
-// import React from "react";
-
-// export default function Services() {
-//   return (
-//     <div style={{ margin: 10, border : '10px' }}>
-//       <h1>Toko Bunga di Bogor</h1>
-//       Kami Nidira Florist melayani pemesanan berbagai jenis rangkaian bunga untuk pengiriman ke seluruh Kota Bogor dan sekitarnya. Kami menghadirkan karangan bunga untuk beragam acara seperti Anniversary, Congratulations, Duka Cita,
-//       Pernkahan dan event tertentu seperti Valentine, Romantis dan lainnya. Untuk mempermudah anda dalam mengirim bunga sebagai hadiah kepada kerabat atau orang yang anda sayangi, anda hanya hanya perlu menghubungi kami tanpa harus
-//       repot-repot mendatangi toko bunga di Bogor.
-//     </div>
-//   );
-// }
-
+import GmapsAddress from "./Gmaps";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 
-function BorderExample() {
+export default function Services() {
   return (
-    <div>
-      <Card border="primary" style={{ width: "18rem" }}>
-        <Card.Header>SKILVUL FLORIST</Card.Header>
-        <Card.Body>
-          <Card.Title>Primary Card Title</Card.Title>
-          <Card.Text>
-            Pernkahan dan event tertentu seperti Valentine, Romantis dan lainnya. Untuk mempermudah anda dalam mengirim bunga sebagai hadiah kepada kerabat atau orang yang anda sayangi, anda hanya hanya perlu menghubungi kami tanpa harus
-            repot-repot mendatangi toko bunga di Bogor.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="secondary" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Secondary Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="success" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Success Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="danger" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Danger Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="warning" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Warning Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="info" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Info Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="dark" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Dark Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
-
-      <Card border="light" style={{ width: "18rem" }}>
-        <Card.Header>Header</Card.Header>
-        <Card.Body>
-          <Card.Title>Light Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        </Card.Body>
-      </Card>
-      <br />
+    <div style={{ margin: 10 }}>
+      <Container className="d-flex justify-content-center mt-3">
+        <div className="flex-column">
+          <h2 className="text-danger">
+            Our <span className="text-black">Services</span>
+          </h2>
+          <hr />
+          <Card bg="dark" border="primary" className="text-white mt-5">
+            <Card.Body>
+              <Container fluid>
+                <Card.Text>
+                  Jelajahi koleksi produk - produk kami untuk semua momen anda. Baik untuk hari ulang tahun, perayaan, hari spesial, hari berkabung ataupun sekedar hobi dan untuk koleksi Anda kami siap melayani kebutuhan bunga Anda.
+                </Card.Text>
+              </Container>
+            </Card.Body>
+          </Card>
+        </div>
+      </Container>
+      <Container className="d-flex justify-content-center my-5">
+        <Card bg="dark" border="primary" className="text-white">
+          <Card.Body>
+            <Container fluid>
+              <Card.Text>Dengan pengalaman lebih dari 30 tahun Anda dapat yakin dan percayakan kebutuhan bunga kepada kami.</Card.Text>
+            </Container>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container className="d-flex justify-content-center my-5">
+        <Card bg="dark" border="primary" className="text-white">
+          <Card.Body>
+            <Container fluid>
+              <Card.Text>Kami bekerjasama dengan desainer karangan bunga terbaik dan bunga segar terpilih dan berkualitas untuk menjamin kepuasan Anda</Card.Text>
+            </Container>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container className="d-flex justify-content-center my-5">
+        <div>
+          <h2 className="text-danger">
+            Find <span className="text-black">Us</span>
+          </h2>
+          <hr />
+          <GmapsAddress />
+          Jakarta, Indonesia
+        </div>
+      </Container>
     </div>
   );
 }
-
-export default BorderExample;

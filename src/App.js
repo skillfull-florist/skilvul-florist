@@ -14,7 +14,9 @@ import Buket from "./components/buket/Buket";
 import TanamanHias from "./components/tanamanhias/TanamanHias";
 import Transaksi from "./components/transaksi/Transaksi";
 import Profil from "./components/profil/Profil";
-import Products from "./components/products/Products";
+import Rincian from "./components/transaksi/Rincian";
+import TransaksiBerhasil from "./components/transaksi/TransaksiBerhasil";
+import Riwayatpesanan from "./components/riwayat/Riwayatpesanan";
 
 function App() {
   return (
@@ -37,6 +39,31 @@ function App() {
             />
 
             <Route
+              path="rincian"
+              element={
+                <ProtectedRoute>
+                  <Rincian />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="berhasil"
+              element={
+                <ProtectedRoute>
+                  <TransaksiBerhasil />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="riwayat"
+              element={
+                <ProtectedRoute>
+                  <Riwayatpesanan />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
               path="login"
               element={
                 <ProtectedRoute loginOnly={false}>
@@ -48,7 +75,7 @@ function App() {
             <Route
               path="profil"
               element={
-                <ProtectedRoute loginOnly={false}>
+                <ProtectedRoute>
                   <Profil />
                 </ProtectedRoute>
               }
@@ -67,9 +94,6 @@ function App() {
               <Route path="description" element={<Description />} />
               <Route path="services" element={<Services />} />
             </Route>
-
-            <Route path="services" element={<Services />} />
-            <Route path="products" element={<Products />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
