@@ -6,6 +6,7 @@ import ModalBuket from './ModalBuket';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
 import { ADD_NEW_PRODUCT, BUKET } from './../../contexts/ContextConsts';
 
+
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
   const { dispatch } = useContext(KeranjangContext);
@@ -27,7 +28,7 @@ export const BuketItem = ({ buket }) => {
   return (
     <Col mb={3} md={4}>
       <div className='pt-4 m-1 text-white'>
-        <Card className='card text-dark border-dark' id='card'>
+        <Card className='card text-dark' style={{backgroundColor: "#E9F7E8"}}>
           <Card.Img src={buket.gambar} height='300' />
           <Card.Body>
             <Card.Title onClick={() => setModalShow(true)}>{buket.nama}</Card.Title>

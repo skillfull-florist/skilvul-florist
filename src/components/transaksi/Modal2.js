@@ -17,9 +17,7 @@ import {Modal, Button } from "react-bootstrap"
         <Modal.Body>
           <h5>Mohon baca terlebih dahulu :</h5>
           <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
+            Silahkan scan kode QR pada halaman selanjutnya untuk melanjutkan pembayaran.
           </p>
         </Modal.Body>
         <Modal.Footer>

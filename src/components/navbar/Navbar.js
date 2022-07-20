@@ -35,7 +35,7 @@ export default function NavBar() {
 
   return (
     <div>
-      <Navbar bg='primary' variant='dark'>
+      <Navbar variant='dark' style={{backgroundColor:"#67A478", position:"sticky"}}>
         <Container fluid>
           <LinkContainer to='/'>
             <Navbar.Brand className='px-3'>SKILVUL-FLORIST</Navbar.Brand>

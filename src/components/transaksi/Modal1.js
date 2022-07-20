@@ -17,9 +17,7 @@ import {Modal, Button } from "react-bootstrap"
         <Modal.Body>
           <h5>Mohon baca terlebih dahulu :</h5>
           <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
+            Anda memilih metode pembayaran dengan florist pay, mohon cek saldo anda kembali untuk memastikan anda dapat membayar dengan metode ini.
           </p>
         </Modal.Body>
         <Modal.Footer>
