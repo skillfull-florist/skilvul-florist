@@ -17,8 +17,7 @@ import * as Helper from './../helpers/KeranjangHelper';
 export const KeranjangContext = createContext();
 
 /* id: '', // id keranjang
-  idUser: 'anon', // id user pemilik keranjang
-  remainingProducts: [],
+  idUser: '', // id user pemilik keranjang
   data: [
     // data produk di keranjang
     {
@@ -26,6 +25,7 @@ export const KeranjangContext = createContext();
       nama: '', // nama produk
       gambar: '', // url gambar
       jumlah: '', // jumlah produk
+      sisa: '', // sisa produk
       harga: '', // harga produk
       tipe: '', // tipe produk, buket / tanamanhias
     },
