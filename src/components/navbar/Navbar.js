@@ -75,6 +75,9 @@ export default function NavBar() {
                       Keranjang <Badge bg='secondary'>{total}</Badge>
                     </NavDropdown.Item>
                   </LinkContainer>
+                  <LinkContainer to='/pesanan'>
+                    <NavDropdown.Item>Pesanan</NavDropdown.Item>
+                  </LinkContainer>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
                 </NavDropdown>
