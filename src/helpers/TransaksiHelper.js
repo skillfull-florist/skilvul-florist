@@ -1,25 +1,5 @@
 import mockapi from './../apis/mockapi2';
 
-/*{
-    createdAt: "",
-    idKeranjang: "",
-    idUser: "",
-    data: [
-      {
-        idProduk: '', // id produk
-        nama: '', // nama produk
-        gambar: '', // url gambar
-        jumlah: '', // jumlah produk
-        harga: '', // harga produk
-        tipe: '', // tipe produk, buket / tanamanhias
-        status: '', // diproses, dikirim
-        pengiriman: []
-      }
-    ],
-    id: ""
-  }
-*/
-
 export const postTransaksi = (keranjang) => {
   const newData = keranjang.data.map((item) => {
     return {
