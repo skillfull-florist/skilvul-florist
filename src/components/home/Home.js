@@ -5,9 +5,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <Container fluid>
+    <Container fluid className='m-0 p-0'>
       <Row className='d-flex'>
-        <Col lg={8} className='ms-1 my-3'>
+        <Col lg={8} className='ms-4 my-3'>
           <HomeCarousel />
         </Col>
         <Col xs>

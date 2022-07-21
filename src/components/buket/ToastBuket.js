@@ -1,15 +1,7 @@
-import { Row, Col, Toast } from 'react-bootstrap';
+import React from 'react';
 
-const ToastBuket = ({ show }) => {
-  return (
-    <Row>
-      <Col xs={6}>
-        <Toast show={show} delay={1500} autohide>
-          <Toast.Body>Produk ditambahkan!</Toast.Body>
-        </Toast>
-      </Col>
-    </Row>
-  );
+const ToastBuket = () => {
+  return <div>ToastBuket</div>;
 };
 
 export default ToastBuket;

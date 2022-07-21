@@ -31,7 +31,7 @@ const Profil = () => {
   }, [auth]);
 
   return (
-    <div className='mt-5'>
+    <div className='mt-5 mb-5'>
       <Container fluid>
         <Row>
           <Col>

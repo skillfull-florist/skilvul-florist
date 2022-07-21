@@ -46,7 +46,7 @@ const TanamanHias = () => {
   }, []);
 
   return (
-    <div>
+    <div className='mt-3 mb-5'>
       <Container>
         <br />
         <h2 className='text-center'>Tanaman Hias</h2>
@@ -62,7 +62,8 @@ const TanamanHias = () => {
                 border: '#E9F7E8',
                 borderRadius: '0',
                 display: 'flex',
-                alignItems: 'flex-end',
+                alignItems: 'flex-start',
+                height: '100%',
               }}
             >
               <img style={{ width: '120px' }} src={img1} alt='buket' />
@@ -84,7 +85,8 @@ const TanamanHias = () => {
                 border: '#E9F7E8',
                 borderRadius: '0',
                 display: 'flex',
-                alignItems: 'flex-end',
+                alignItems: 'flex-start',
+                height: '100%',
               }}
             >
               <img style={{ width: '120px' }} src={img2} alt='hias' />

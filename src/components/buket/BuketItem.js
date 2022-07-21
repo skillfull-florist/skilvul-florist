@@ -5,13 +5,14 @@ import img1 from '../../assets/shopping-cart.png';
 import ModalBuket from './ModalBuket';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
 import { ADD_NEW_PRODUCT, BUKET } from './../../contexts/ContextConsts';
-import ToastBuket from './ToastBuket';
+import Toast from './../commons/Toast';
 
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
   const { dispatch } = useContext(KeranjangContext);
   const [modalShow, setModalShow] = useState(false);
-  const [toastShow, setToastShow] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastText, setToastText] = useState('');
 
   const handleAddProduct = () => {
     dispatch({
@@ -22,15 +23,16 @@ export const BuketItem = ({ buket }) => {
         tipe: BUKET,
       },
     });
-    setToastShow(true);
+    setToastText(`Produk ${buket.nama} ditambahkan ke keranjang.`);
+    setShowToast(true);
     setTimeout(() => {
-      setToastShow(false);
+      setShowToast(false);
     }, 1500);
   };
   return (
     <Col mb={3} md={3}>
       <div className='pt-4 m-1 text-white'>
-        <ToastBuket show={toastShow} />
+        <Toast show={showToast} text={toastText} />
         <Card className='card text-dark' style={{ backgroundColor: '#E9F7E8' }}>
           <Card.Img src={buket.gambar} height='200' />
           <Card.Body>

@@ -8,11 +8,31 @@ import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LOGOUT, DELETE_KERANJANG_LOCAL } from './../../contexts/ContextConsts';
+import Confirm from './../commons/Confirm';
 
 export default function NavBar() {
   const { auth, dispatch } = useContext(AuthContext);
   const { keranjang, dispatch: dispatchKeranjang } = useContext(KeranjangContext);
   const [total, setTotal] = useState(0);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [confirmTitle] = useState('Konfirmasi');
+  const [confirmText, setConfirmText] = useState('');
+
+  const handleCloseConfirm = () => setShowConfirm(false);
+  const handleShowConfirm = () => setShowConfirm(true);
+  const handleConfirmConfirm = () => {
+    dispatch({
+      type: LOGOUT,
+    });
+    dispatchKeranjang({
+      type: DELETE_KERANJANG_LOCAL,
+    });
+    setShowConfirm(false);
+  };
+  const handleLogout = () => {
+    setConfirmText('Anda yakin mau keluar?');
+    setShowConfirm(true);
+  };
 
   useEffect(() => {
     if (keranjang === undefined) {
@@ -22,19 +42,16 @@ export default function NavBar() {
     setTotal((t) => keranjang.data.length);
   }, [keranjang]);
 
-  const handleLogout = () => {
-    if (window.confirm('Yakin keluar?') === true) {
-      dispatch({
-        type: LOGOUT,
-      });
-      dispatchKeranjang({
-        type: DELETE_KERANJANG_LOCAL,
-      });
-    }
-  };
-
   return (
     <div>
+      <Confirm
+        show={showConfirm}
+        title={confirmTitle}
+        text={confirmText}
+        handleShow={handleShowConfirm}
+        handleClose={handleCloseConfirm}
+        handleConfirm={handleConfirmConfirm}
+      />
       <Navbar sticky='top' bg='primary' variant='dark' style={{ zIndex: 1 }}>
         <Container fluid>
           <LinkContainer to='/'>
@@ -59,12 +76,15 @@ export default function NavBar() {
                 <NavDropdown
                   align='end'
                   title={
-                    <img
-                      className='rounded-circle'
-                      src={auth.user.avatar}
-                      height='32'
-                      alt='Avatar'
-                    />
+                    <>
+                      <img
+                        className='rounded-circle'
+                        src={auth.user.avatar}
+                        height='32'
+                        alt='Avatar'
+                      />
+                      <span>{auth.user.name}</span>
+                    </>
                   }
                 >
                   <LinkContainer to='/profil'>
@@ -82,7 +102,7 @@ export default function NavBar() {
                   <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <NavDropdown title='Masuk' className='pe-3'>
+                <NavDropdown align='end' title='Masuk' className='pe-3'>
                   <LinkContainer to='/login'>
                     <NavDropdown.Item>Login</NavDropdown.Item>
                   </LinkContainer>
