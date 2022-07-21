@@ -2,11 +2,22 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from './../../contexts/AuthContext';
 import { Container, Col, Row, Card, Alert } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
 
+const QUICK_BUY = 'QUICK_BUY';
+
 const Profil = () => {
   const { auth } = useContext(AuthContext);
+
+  const [dataHistory, setDataHistory] = useState(null);
+  useEffect(() => {
+    const dataHistoryLocal = JSON.parse(localStorage.getItem(QUICK_BUY));
+    if (dataHistoryLocal !== null) {
+      setDataHistory(dataHistoryLocal);
+    }
+  }, []);
 
   return (
     <div>
