@@ -45,7 +45,7 @@ const Buket = () => {
   }, []);
 
   return (
-    <div>
+    <div className='mt-3 mb-5'>
       <Container>
         <br />
         <h2 className='text-center'>BUKET</h2>
@@ -61,7 +61,8 @@ const Buket = () => {
                 border: '#E9F7E8',
                 borderRadius: '0',
                 display: 'flex',
-                alignItems: 'flex-end',
+                alignItems: 'flex-start',
+                height: '100%',
               }}
             >
               <img style={{ width: '120px' }} src={img1} alt='hand bouquet' />
@@ -83,7 +84,8 @@ const Buket = () => {
                 border: '#E9F7E8',
                 borderRadius: '0',
                 display: 'flex',
-                alignItems: 'flex-end',
+                alignItems: 'flex-start',
+                height: '100%',
               }}
             >
               <img style={{ width: '120px' }} src={img2} alt='decorative plants' />

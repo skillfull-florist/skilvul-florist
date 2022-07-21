@@ -16,8 +16,10 @@ import Transaksi from './components/transaksi/Transaksi';
 import Profil from './components/profil/Profil';
 import Rincian from './components/transaksi/Rincian';
 import TransaksiBerhasil from './components/transaksi/TransaksiBerhasil';
-import Riwayatpesanan from './components/riwayat/Riwayatpesanan';
+import RiwayatPesanan from './components/riwayat/RiwayatPesanan';
 import Keranjang from './components/keranjang/Keranjang';
+import Pesanan from './components/pesanan/Pesanan';
+import DetailPesanan from './components/pesanan/DetailPesanan';
 
 function App() {
   return (
@@ -61,7 +63,24 @@ function App() {
               path='riwayat'
               element={
                 <ProtectedRoute>
-                  <Riwayatpesanan />
+                  <RiwayatPesanan />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path='pesanan'
+              element={
+                <ProtectedRoute>
+                  <Pesanan />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path='pesanan/detail'
+              element={
+                <ProtectedRoute>
+                  <DetailPesanan />
                 </ProtectedRoute>
               }
             />

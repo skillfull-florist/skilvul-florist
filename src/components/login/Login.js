@@ -8,6 +8,7 @@ import {
 } from './../../contexts/KeranjangContext';
 import { LOGIN } from './../../contexts/ContextConsts';
 import * as Helper from './../../helpers/LoginHelper';
+import Alert from './../commons/Alert';
 
 function Login({ from }) {
   const navigate = useNavigate();
@@ -16,6 +17,12 @@ function Login({ from }) {
   const [lihatPass, setLihatpass] = useState(false);
   const { dispatch } = useContext(AuthContext);
   const { dispatch: dispatchKeranjang } = useContext(KeranjangContext);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertTitle] = useState('Info');
+  const [alertText, setAlertText] = useState('');
+
+  const handleCloseAlert = () => setShowAlert(false);
+  const handleShowAlert = () => setShowAlert(true);
 
   const handleChange = (event) => {
     setUserForm({ ...userForm, [event.target.name]: event.target.value });
@@ -47,7 +54,8 @@ function Login({ from }) {
           validateKeranjangAPIByUserId(user.id, dispatchKeranjang);
           navigate('/');
         } else {
-          alert('User tidak ditemukan! Silakan daftar dulu.');
+          setAlertText('User tidak ditemukan! Silakan daftar dulu.');
+          setShowAlert(true);
         }
       }
     }
@@ -60,6 +68,13 @@ function Login({ from }) {
   return (
     <div className='d-flex flex-column vh-100'>
       <div className='mt-5'>
+        <Alert
+          show={showAlert}
+          title={alertTitle}
+          text={alertText}
+          handleShow={handleShowAlert}
+          handleClose={handleCloseAlert}
+        />
         <h1>Masuk ke akun anda</h1>
         <Form className='mt-5'>
           <div className='text-start'>

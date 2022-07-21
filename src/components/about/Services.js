@@ -1,64 +1,43 @@
-import GmapsAddress from './Gmaps';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-
+import './Services.css'
 export default function Services() {
   return (
     <div style={{ margin: 10 }}>
-      <Container className='d-flex justify-content-center mt-3'>
-        <div className='flex-column'>
-          <h2 className='text-danger'>
-            Our <span className='text-black'>Services</span>
-          </h2>
-          <hr />
-          <Card bg='dark' border='primary' className='text-white mt-5'>
-            <Card.Body>
-              <Container fluid>
-                <Card.Text>
-                  Jelajahi koleksi produk - produk kami untuk semua momen anda. Baik
-                  untuk hari ulang tahun, perayaan, hari spesial, hari berkabung ataupun
-                  sekedar hobi dan untuk koleksi Anda kami siap melayani kebutuhan bunga
-                  Anda.
-                </Card.Text>
-              </Container>
-            </Card.Body>
-          </Card>
+
+      <div className="container-fluid pt-5 pb-5 bg-light">
+        <div className="container text-center">
+
+          <div className="row pt-4 gx-4 gy-4">
+            <div className="col-md-4 text-center tim">
+              <img
+                src="https://cdn1-production-images-kly.akamaized.net/Pj5qz2JAM9WgdQmEa5gij40zgHM=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3595870/original/024968200_1633628314-people-working-call-center_23-2148096554.jpg"
+                className="rounded-circle mb-3"
+              />
+              <h4>
+                customer service</h4>
+
+
+            </div>
+            <div className="col-md-4 text-center tim">
+              <img
+                src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg?w=2000"
+                className="rounded-circle mb-3"
+              />
+              <h4>delivery</h4>
+
+
+            </div>
+            <div className="col-md-4 text-center tim">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbI3GOy-g5Fp-Hqkvn7cl3LM3O-X-WQQ3WvA&usqp=CAU"
+                className="rounded-circle mb-3"
+              />
+              <h4>flower purchase</h4>
+
+
+            </div>
+          </div>
         </div>
-      </Container>
-      <Container className='d-flex justify-content-center my-5'>
-        <Card bg='dark' border='primary' className='text-white'>
-          <Card.Body>
-            <Container fluid>
-              <Card.Text>
-                Dengan pengalaman lebih dari 30 tahun Anda dapat yakin dan percayakan
-                kebutuhan bunga kepada kami.
-              </Card.Text>
-            </Container>
-          </Card.Body>
-        </Card>
-      </Container>
-      <Container className='d-flex justify-content-center my-5'>
-        <Card bg='dark' border='primary' className='text-white'>
-          <Card.Body>
-            <Container fluid>
-              <Card.Text>
-                Kami bekerjasama dengan desainer karangan bunga terbaik dan bunga segar
-                terpilih dan berkualitas untuk menjamin kepuasan Anda
-              </Card.Text>
-            </Container>
-          </Card.Body>
-        </Card>
-      </Container>
-      <Container className='d-flex justify-content-center my-5'>
-        <div>
-          <h2 className='text-danger'>
-            Find <span className='text-black'>Us</span>
-          </h2>
-          <hr />
-          <GmapsAddress />
-          Jakarta, Indonesia
-        </div>
-      </Container>
+      </div>
     </div>
   );
 }

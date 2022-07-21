@@ -2,12 +2,19 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import * as Helper from './../../helpers/LoginHelper';
+import Alert from './../commons/Alert';
 
 function Register() {
   const navigate = useNavigate();
   const [userForm, setUserForm] = useState({ email: '', username: '', password: '' });
   const [formError, setFormError] = useState({});
   const [lihatPass, setLihatpass] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertTitle] = useState('Info');
+  const [alertText, setAlertText] = useState('');
+
+  const handleCloseAlert = () => setShowAlert(false);
+  const handleShowAlert = () => setShowAlert(true);
 
   const handleChange = (event) => {
     setUserForm({ ...userForm, [event.target.name]: event.target.value });
@@ -32,10 +39,12 @@ function Register() {
         );
 
         if (user !== null) {
-          alert('Registrasi berhasil!');
+          setAlertText('Registrasi berhasil!');
+          setShowAlert(true);
           navigate('/login');
         } else {
-          alert('Gagal registrasi!');
+          setAlertText('Gagal registrasi!');
+          setShowAlert(true);
         }
       }
     }
@@ -48,6 +57,13 @@ function Register() {
   return (
     <div className='d-flex flex-column vh-100'>
       <div className='mt-5'>
+        <Alert
+          show={showAlert}
+          title={alertTitle}
+          text={alertText}
+          handleShow={handleShowAlert}
+          handleClose={handleCloseAlert}
+        />
         <h1>Daftar akun baru</h1>
         <Form className='mt-5'>
           <div className='text-start'>

@@ -6,30 +6,34 @@ import img1 from '../../assets/shopping-cart.png';
 import ModalTanamanHias from './ModalTanamanHias';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
 import { ADD_NEW_PRODUCT, TANAMAN_HIAS } from './../../contexts/ContextConsts';
+import ToastTanaman from './ToastTanaman';
 
 export const TanamanHiasItem = ({ tanamanHias }) => {
   const navigate = useNavigate();
   const { dispatch } = useContext(KeranjangContext);
-  // modal
   const [modalShow, setModalShow] = useState(false);
+  const [toastShow, setToastShow] = useState(false);
 
   const handleAddProduct = () => {
-    if (window.confirm('Tambah produk ini ke keranjang?') === true) {
-      dispatch({
-        type: ADD_NEW_PRODUCT,
-        payload: {
-          ...tanamanHias,
-          idProduk: tanamanHias.id,
-          tipe: TANAMAN_HIAS,
-        },
-      });
-    }
+    dispatch({
+      type: ADD_NEW_PRODUCT,
+      payload: {
+        ...tanamanHias,
+        idProduk: tanamanHias.id,
+        tipe: TANAMAN_HIAS,
+      },
+    });
+    setToastShow(true);
+    setTimeout(() => {
+      setToastShow(false);
+    }, 1500);
   };
   return (
-    <Col mb={3} md={4}>
+    <Col mb={3} md={3}>
       <div className='p-2 m-1 text-white'>
+        <ToastTanaman show={toastShow} />
         <Card className='card text-dark' id='card'>
-          <Card.Img src={tanamanHias.gambar} height='300' />
+          <Card.Img src={tanamanHias.gambar} height='200' />
           <Card.Body className='card-body'>
             <Card.Title onClick={() => setModalShow(true)}>
               {tanamanHias.nama}
