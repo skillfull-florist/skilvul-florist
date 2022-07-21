@@ -57,7 +57,6 @@ const Keranjang = () => {
         </div>
       ) : (
         <div>
-          <br/>
           <Alert
               style={{
                 backgroundColor: '#fff',
@@ -66,56 +65,61 @@ const Keranjang = () => {
                 alignItems: 'flex-end',
               }}
             >
-              <Row className='pt-2'>
-                <Col md={12}>
-                  <h4 className='keranjang'>Keranjang</h4>
-                  <hr/>
-                </Col>
-              </Row>
-              <Row className='pt-2'>
-                <Col md={12}>
-                  <Table responsive id='tabel-keranjang'>
-                    <thead>
-                      <tr>
-                        <th>Gambar</th>
-                        <th>Nama Produk</th>
-                        <th>Harga Satuan</th>
-                        <th>Jumlah</th>
-                        <th>Harga</th>
-                        <th>Hapus</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {keranjang.data.map((item, idx) => (
-                        <KeranjangItem key={idx} produk={item} />
-                      ))}
-                    </tbody>
-                  </Table>
-                </Col>
-              </Row>
-              <Row>
-                <div className='col-md-5 ms-auto'>
-                  <Table responsive>
-                    <thead>
-                      <tr>
-                        <th>Total Harga</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Rp {total}</td>
-                      </tr>
-                      <tr className='position-center'>
-                        <td colSpan={2}>
-                          <Button href='#' variant='success'>
-                            Beli
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </div>
-              </Row>
+          <Row className='pt-2'>
+            <Col md={12}>
+              <h3 className='keranjang'>Keranjang</h3>
+              <hr/>
+            </Col>
+          </Row>
+          <Row className='pt-2'>
+            <Col md={12}>
+              <Table responsive id='tabel-keranjang'>
+                <thead>
+                  <tr>
+                    <th>Gambar</th>
+                    <th>Nama Produk</th>
+                    <th>Harga Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Hapus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {keranjang.data.map((item, idx) => (
+                    <KeranjangItem key={idx} produk={item} />
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
+          <Row>
+            <div className='col-md-5 ms-auto'>
+              <Table responsive>
+                <thead>
+                  <tr>
+                    <th>Total Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rp {total}</td>
+                  </tr>
+                  <tr className='position-center'>
+                    <td colSpan={2}>
+                      <Button
+                        variant='success'
+                        onClick={() =>
+                          navigate(`/transaksi/keranjang/${keranjang.idUser}`)
+                        }
+                      >
+                        Beli
+                      </Button>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </Row>
           </Alert>
         </div>
       )}
