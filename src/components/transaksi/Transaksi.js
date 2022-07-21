@@ -8,7 +8,6 @@ import Row from 'react-bootstrap/Row';
 import * as Helper from './../../helpers/KeranjangHelper';
 
 function Transaksi() {
-  const navigate = useNavigate();
   const params = useParams();
   const [produk, setProduk] = useState(null);
   const [keranjang, setKeranjang] = useState(false);

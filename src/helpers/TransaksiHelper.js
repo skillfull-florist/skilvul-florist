@@ -29,13 +29,6 @@ export const postTransaksi = (keranjang) => {
       jumlah: item.jumlah,
       harga: item.harga,
       tipe: item.tipe,
-      status: 'Diproses',
-      pengiriman: [
-        {
-          waktu: new Date().toISOString(),
-          status: 'Diproses',
-        },
-      ],
     };
   });
   const payload = {
@@ -44,15 +37,25 @@ export const postTransaksi = (keranjang) => {
     idUser: keranjang.idUser,
     data: newData,
     id: '',
+    status: 'Diproses',
+    pengiriman: [
+      {
+        waktu: new Date().toISOString(),
+        status: 'Diproses',
+      },
+    ],
   };
   return mockapi.post(`/transaksi`, payload).then((res) => res.data);
 };
 
-export const getTransaksiByUserId = async (userId) => {
+export const getTransaksiByUserId = async (userId, sort = null) => {
   const res = await mockapi.get('/transaksi');
   const transaksi = res.data.filter((item) => `${item.idUser}` === `${userId}`);
   if (transaksi.length > 0) {
-    return transaksi[0];
+    if (sort !== null) {
+      return transaksi.sort(sort);
+    }
+    return transaksi;
   }
   throw new Error('Transaksi tidak ditemukan');
 };

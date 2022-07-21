@@ -5,23 +5,34 @@ import { Container, Col, Row, Card, Alert } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
-
-const QUICK_BUY = 'QUICK_BUY';
+import * as Helper from './../../helpers/TransaksiHelper';
+import PesananItem from './PesananItem';
 
 const Profil = () => {
   const { auth } = useContext(AuthContext);
+  const [isPesanan, setIsPesanan] = useState(false);
+  const [pesanan, setPesanan] = useState([]);
 
-  const [dataHistory, setDataHistory] = useState(null);
   useEffect(() => {
-    const dataHistoryLocal = JSON.parse(localStorage.getItem(QUICK_BUY));
-    if (dataHistoryLocal !== null) {
-      setDataHistory(dataHistoryLocal);
+    setIsPesanan(false);
+    async function getTransaksi() {
+      const result = await Helper.getTransaksiByUserId(
+        auth.user.id,
+        (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
+      );
+
+      setPesanan(result);
+      setIsPesanan(true);
     }
-  }, []);
+
+    if (auth.isAuthenticated) {
+      getTransaksi();
+    }
+  }, [auth]);
 
   return (
     <div>
-      <Container>
+      <Container fluid>
         <Row>
           <Col>
             <Alert
@@ -33,11 +44,15 @@ const Profil = () => {
               }}
             >
               <h5 style={{ color: 'black' }}>Profile anda</h5>
-                <hr />
-              <img style={{ width: '120px' , borderRadius:"50%"}} src={auth.user.avatar} alt='buket' />
-                <hr/>
-              <Row style={{fontSize:"15px"}}>
-                <Col style={{ textAlign: 'left'}}>
+              <hr />
+              <img
+                style={{ width: '120px', borderRadius: '50%' }}
+                src={auth.user.avatar}
+                alt='buket'
+              />
+              <hr />
+              <Row style={{ fontSize: '15px' }}>
+                <Col style={{ textAlign: 'left' }}>
                   <p>Username : </p>
                 </Col>
                 <Col style={{ textAlign: 'Right' }}>{auth.user.username}</Col>
@@ -61,14 +76,18 @@ const Profil = () => {
                 alignItems: 'flex-end',
               }}
             >
-              <img style={{ width: '120px' }} src={img2} alt='hias' />
               <Row>
                 <h6 style={{ color: 'black' }}>History Belanja</h6>
-                <hr />
                 <p style={{ color: 'black', fontSize: '10px' }}>
                   Jual Tanaman hias mencakup baik berbentuk terna, merambat, semak,
                   perdu, ataupun pohon.
                 </p>
+                <hr />
+                {isPesanan ? (
+                pesanan.map((item, idx) => <PesananItem key={idx} pesanan={item} />)
+              ) : (
+                <h3>Belum pernah belanja...</h3>
+              )}
               </Row>
             </Alert>
           </Col>

@@ -19,6 +19,7 @@ import TransaksiBerhasil from './components/transaksi/TransaksiBerhasil';
 import RiwayatPesanan from './components/riwayat/Riwayatpesanan';
 import Keranjang from './components/keranjang/Keranjang';
 import Pesanan from './components/pesanan/Pesanan';
+import DetailPesanan from './components/pesanan/DetailPesanan';
 
 function App() {
   return (
@@ -36,9 +37,9 @@ function App() {
             <Route
               path='transaksi/:type/:id'
               element={
-                // <ProtectedRoute>
-                <Transaksi />
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <Transaksi />
+                </ProtectedRoute>
               }
             />
 
@@ -71,6 +72,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Pesanan />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path='pesanan/detail'
+              element={
+                <ProtectedRoute>
+                  <DetailPesanan />
                 </ProtectedRoute>
               }
             />

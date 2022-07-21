@@ -1,8 +1,11 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import sukses from '../../assets/Sukses1.png';
+import {useNavigate} from "react-router-dom"
+
 
 const TransaksiBerhasil = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Row>
@@ -18,6 +21,7 @@ const TransaksiBerhasil = () => {
       </Row>
       <h3>Pembayaran Berhasil!</h3>
       <Button
+        onClick={() => navigate('/pesanan')}
         style={{
           backgroundColor: '#67A478',
           borderRadius: '0',
