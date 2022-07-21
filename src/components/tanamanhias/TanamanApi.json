@@ -1,0 +1,130 @@
+[
+  {
+    "nama": "Lavender",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Lavender-Indoor.jpg",
+    "harga": 40000,
+    "deskripsi": "Warnanya yang cantik dan baunya yang wangi membuat lavender jadi tanaman hias yang digemari.Tanaman bunga lavender memiliki aroma tersendiri yang dipercaya memberikan efek aromatik. Salah satunya sepertinya menghilangkan stres sampai membantu kesulitan tidur.Namun, menanam lavender lumayan tricky. Lavender membutuhkan perawatan ekstra dan juga sensitif akan cahaya dan kelembapan.",
+    "id": "1",
+    "sisa": 12
+  },
+  {
+    "nama": "Anthurium",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Bunga-Anthurium-Indoor.jpg",
+    "harga": 37000,
+    "deskripsi": "Bunga anthurium sangat indah untuk dijadikan dekorasi di dalam rumah. Tanaman ini mempunyai  bentuk daun yang unik dan bunga yang berwarna merah.Tanaman hias ini bisa kamu tanam tanpa menggunakan tanah, melainkan air. Tanam bunga anthurium di dalam wadah bening transparan, akar anthurium yang terlihat akan memberi kesan alami di rumahmu.",
+    "id": "2",
+    "sisa": 11
+  },
+  {
+    "nama": "Cocor Bebek",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Cocor-Bebek-Indoor.jpg",
+    "harga": 23000,
+    "deskripsi": "Cocor bebek adalah tanaman yang sering dipilih untuk menghias rumah karena warna bunganya yang cerah.Tanaman ini memiliki daun yang tebal berdaging dan mengandung banyak air, sedangkan batangnya lunak dan memiliki ruas. Cocor bebek memiliki bunga majemuk berwarna merah muda.Agar cocor bebek dapat berbunga dengan baik, letakkan di dekat jendela yang terkena cahaya matahari. Jangan lupa pastikan tanahnya terhidrasi dengan baik, tidak terlalu basah dan tidak terlalu kering.",
+    "id": "3",
+    "sisa": 10
+  },
+  {
+    "nama": "Bunga Pentas",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Bunga-Pentas-Outdoor.jpg",
+    "harga": 18000,
+    "deskripsi": "Bunga pentas adalah salah satu tanaman hias outdoor yang menjadi pilihan bagi para pecinta tanaman hias karena perawatannya mudah dengan bunga yang begitu rimbun.Tanaman bunga pentas memiliki daun hijau berbulu dengan bunga yang berwarna merah, putih, merah muda, atau ungu.Selain cocok untuk ditanam langsung di taman rumah, kamu juga bisa menanam bunga pentas di dalam pot atau di dalam keranjang gantung.",
+    "id": "4",
+    "sisa": 9
+  },
+  {
+    "nama": "Bunga Geranium/Tapak Dara",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Bunga-Geranium-Tapak-Dara-Outdoor.jpg",
+    "harga": 27000,
+    "deskripsi": "Bunga geranium atau tapak dara dapat menjadi tanaman hias yang cantik untuk pekarangan rumah sekaligus dapat mengusir nyamuk.Tanaman ini sangat cocok di tanam di wilayah tropis seperti Indonesia karena dapat beradaptasi dengan baik dalam cuaca panas. Cara menanam bunga ini terbilang mudah dan tidak memerlukan perlakuan khusus dalam perawatannya.Tanaman geranium memiliki bunga dengan variasi warna yang cantik. Itu sebabnya, tanaman hias ini cocok untuk dijadikan tanaman hias gantung di bagian pekarangan rumah kamu.",
+    "id": "5",
+    "sisa": 8
+  },
+  {
+    "nama": "Tanaman Kupu-kupu",
+    "gambar": "https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2020/10/Tanaman-Kupu-Kupu-Oxalis-Plant-Indoor.jpg",
+    "harga": 30000,
+    "deskripsi": "Warna dedaunannya yang ungu dan berbentuk sayap kupu-kupu membuat penampilannya istimewa. Sedangkan bentuk bunganya sekilas mirip dengan anggrek.Tanaman ini disukai oleh pecinta tanaman hias karena sifatnya yang tidak rewel dan mudah perawatannya.Tanaman oxalis ini bisa ditanam di dalam rumah menggunakan pot dengan akses cahaya matahari yang cukup. Jika tanaman diletakkan di kamar yang gelap, tanaman ini tidak akan berbunga.",
+    "id": "6",
+    "sisa": 8
+  },
+  {
+    "nama": "Kaktus",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210531/kaktus-resized-e20222cedc2d2667cd49d19cad7ccbcf.jpg",
+    "harga": 21000,
+    "deskripsi": "Sebagai tanaman yang tahan terhadap perubahan dan kelembapan cuaca yang rendah, kaktus menjadi tanaman yang sangat mudah dalam perawatan. Sebab, kamu tak perlu setiap hari menyiramnya.",
+    "sisa": 36,
+    "id": "7"
+  },
+  {
+    "nama": "Sirih gading",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210506/sirih-gadingpng-de987991f2b3b5cf2ba851caa8537b70.png",
+    "harga": 25000,
+    "deskripsi": "Sebagai tanaman hias gantung yang bisa merambat, kamu bisa menjadikan sirih gading sebagai hiasan di dinding pekarangan rumah agar lebih segar dan asri.Memiliki bentuk daun yang mirip dengan bentuk hati, serta berwarna hijau dengan corak kekuning-kuningan, tanaman ini menjadi tanaman yang cukup sederhana dalam menanamnya. Cukup tanam di pot dan biarkan akarnya terus tumbuh.",
+    "sisa": 36,
+    "id": "8"
+  },
+  {
+    "nama": "Lidah mertua",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210622/tanaman-lidah-mertua-a9d595135d83dddcfe82e6569fd2b0dc.jpg",
+    "harga": 32000,
+    "deskripsi": "Sunt voluptas voluptates rerum tempore ducimus.",
+    "sisa": 79,
+    "id": "9"
+  },
+  {
+    "nama": "Lili paris",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210506/lily-parispng-bb431bf312dc492d8edf37703c77a1f0.png",
+    "harga": 12000,
+    "deskripsi": "Tanaman hias gantung lainnya yang cocok untuk pemula adalah lili paris. Tanaman ini umumnya ditemui di depan rumah sebagai penghias pagar maupun digantung di depan rumah sebagai dekorasi.",
+    "sisa": 61,
+    "id": "10"
+  },
+  {
+    "nama": "Sukulen",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210705/sukulenpng-b786141827d83d5f12d760fb8f8ec219.png",
+    "harga": 25000,
+    "deskripsi": "Memiliki ragam bentuk, warna, serta jenis yang ditawarkan, tanaman sukulen yang menyerupai kaktus ini menjadi tanaman hias yang cocok dicoba oleh pemula sebagai dekorasi untuk mempercantik rumah.",
+    "sisa": 21,
+    "id": "11"
+  },
+  {
+    "nama": "Euphorbia",
+    "gambar": "https://cdn.popmama.com/content-images/post/20201007/img-07102020-171010-800-x-400-piksel-7b14acad385d901099d9a3565c11b8dd.jpg",
+    "harga": 22000,
+    "deskripsi": "Satu lagi tanaman hias yang minim perawatan karena tidak membutuhkan banyak air, yakni euphorbia. Memiliki bentuk bunga kecil dengan warna cerah, tanaman euphorbia menjadi tanaman hias yang digemari sebagaian masyarakat.",
+    "sisa": 38,
+    "id": "12"
+  },
+  {
+    "nama": "Palem pot",
+    "gambar": "https://cdn.popmama.com/content-images/post/20201119/img-19112020-130140-800-x-400-piksel-d3fc009ec505417309c3d3cea826b67f.jpg",
+    "harga": 37000,
+    "deskripsi": "Sebagai tanaman yang banyak ditemui diberbagai tempat, palem menjadi tanaman hias yang cukup tangguh dan tidak mudah mati meski kekurangan air seklipun. Itulah mengapa tanaman ini menjadi tanaman yang mudah dan cocok bagi para pemula. ",
+    "sisa": 93,
+    "id": "13"
+  },
+  {
+    "nama": "Bougenville",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210607/bougenvillepng-56c2b6b0183c9e58a9388c367220d31c.png",
+    "harga": 34000,
+    "deskripsi": "Bougenville atau bunga kertas menjadi tanaman hias lainnya yang cocok untuk pemula. Hal ini karena bougenville menjadi tanaman hias yang mudah dalam merawatnya. Dengan perawatan yang minim, serta dapat tumbuh di iklim tropis, bougenville dapat tumbuh hingga 10 meter dan menghasilkan bunga yang banyak dengan warna pink yang akan menghiasi pekarangan rumahmu.",
+    "sisa": 42,
+    "id": "14"
+  },
+  {
+    "nama": "Sri Rezeki",
+    "gambar": "https://cdn.popmama.com/content-images/post/20210111/hias-3-51f25387ce99de2dfb7fba8a0dd9aa65.jpg",
+    "harga": 48000,
+    "deskripsi": "Sesuai dengan namanya, tanaman yang pernah populer pada beberapa tahun lalu ini dipercaya sebagai tanaan hias yang akan memberikan keberuntungan bagi yang memeliharanya.",
+    "sisa": 92,
+    "id": "15"
+  },
+  {
+    "nama": "Small Metal Chicken",
+    "gambar": "http://loremflickr.com/640/480/nature",
+    "harga": 21000,
+    "deskripsi": "Hic aut qui.",
+    "sisa": 72,
+    "id": "16"
+  }
+]
