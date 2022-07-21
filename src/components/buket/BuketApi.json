@@ -1,0 +1,130 @@
+[
+  {
+    "nama": "Calla Lily",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-calla-lilyfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 56000,
+    "deskripsi": "Sesuai namanya, bunga ini masih satu jenis dengan bunga lili. Calla lily berwarna putih, berbentuk seperti lonceng, dan memiliki aroma yang harum dan lembut. Bunga ini mencerminkan kecantikan yang luar biasa, sehingga bisa membuat sang pengantin wanita terlihat lebih anggun dan elegan.",
+    "sisa": 17,
+    "id": "1"
+  },
+  {
+    "nama": "Mawar",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-mawarfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 27000,
+    "deskripsi": "Mawar merah melambangkan gairah cinta hasrat, dan rasa hormat.Mawar putih melambangkan cinta sejati, kemurnian, kesucian kesungguhan, dan kerendahan hati. Mawar pink mengandung arti kekaguman, keanggunan juga kecantikan. Sementara mawar kuning mencerminkan kebahagiaan, sukacita, kehangatan, serta kepedulian.",
+    "sisa": 37,
+    "id": "2"
+  },
+  {
+    "nama": "Hydrangea",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-hydrangeafoto-pinterest.jpeg?w=620&q=90",
+    "harga": 45000,
+    "deskripsi": "Bunga hydrangea atau juga dikenal dengan bunga pancawarna memiliki bentuk dan warna yang sangat manis. Hydrangea tersedia dalam beberapa pilihan warna, antara lain putih, biru muda, kuning, pink, dan ungu. Bunga yang satu ini akan terlihat besar dan bervolume saat bermekaran, sehingga sangat cocok dijadikan hand bouquet.",
+    "sisa": 66,
+    "id": "3"
+  },
+  {
+    "nama": "Babys Breath",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-babys-breathfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 54000,
+    "deskripsi": "Bunga berputik kecil ini cocok banget dengan konsep pernikahan rustic. Bunga babys breath memancarkan arti sesuatu yang murni dan tak berdosa layaknya sebuah kehidupan pernikahan baru yang masih murni, serta simbol kekuatan cinta abadi.Kamu bisa mengombinasikan bunga ini bersama bunga-bunga lain berwarna cerah atau dengan daun-daun berbentuk menarik, kemudian dibalut dengan kain goni dan tali rami agar lebih menghidupkan kesan rustic.",
+    "sisa": 47,
+    "id": "4"
+  },
+  {
+    "nama": "Anyelir",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-anyelirfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 38000,
+    "deskripsi": "Bunga anyelir atau carnation memiliki daya tahan yang sangat baik, sehingga sering dikaitkan dengan cinta jangka panjang. Kelebihannya lagi, bunga ini mudah ditemukan sebab tumbuh sepanjang tahun. Anyelir umumnya menggambarkan rasa cinta, kasih sayang, harapan, dan juga rasa syukur.",
+    "sisa": 16,
+    "id": "5"
+  },
+  {
+    "nama": "Tulip",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-tulipfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 29000,
+    "deskripsi": "Bunga tulip juga merupakan salah satu bunga yang populer digunakan sebagai hand bouquet. Bunga yang memiliki macam-macam variasi warna ini akan memberi kesan klasik dan elegan bagi yang membawanya.Tulip menunjukkan makna rasa cinta dan gairah kepada pasangan. Bunga ini terbilang cukup mahal karena biasanya tumbuh di akhir musim semi.",
+    "sisa": 74,
+    "id": "6"
+  },
+  {
+    "nama": "Peony",
+    "gambar": "https://akcdn.detik.net.id/community/media/visual/2020/11/26/bunga-peonyfoto-pinterest.jpeg?w=620&q=90",
+    "harga": 50000,
+    "deskripsi": "Bunga peony mempunyai karakteristik kelopak yang rimbun dan beraroma harum. Variasi warnanya pun sangat cantik, yakni putih, pink, merah, kuning, dan ungu.Bunga ini dipercaya bisa membawa keberuntungan dan kehidupan pernikahan yang bahagia hingga akhir hayat bagi kedua mempelai. Karena simbol tersebut, maka bunga ini sangat cocok untuk menemanimu berjalan ke altar pelaminan.",
+    "sisa": 40,
+    "id": "7"
+  },
+  {
+    "nama": "Sweet pea",
+    "gambar": "https://cdn.idntimes.com/content-images/post/20220526/158477767-2919387968330882-4194480273931862285-n-bb8d08201aaae598c579c353374b9170.jpg",
+    "harga": 68000,
+    "deskripsi": " sweet pea melambangkan kesenangan, harapan baik, dan persahabatan. Memiliki aroma fruity floral yang light dan manis, sehingga dimanfaatkan menjadi parfum.",
+    "sisa": 98,
+    "id": "8"
+  },
+  {
+    "nama": "Peony",
+    "gambar": "https://cdn.idntimes.com/content-images/post/20220526/101076987-534881277191017-7107406648243859348-n-082e05da8260f0e19a1123cca05d6b72.jpg",
+    "harga": 36700,
+    "deskripsi": "peony adalah simbol cinta, romansa, keindahan, kebahagiaan, dan niat baik.Pilihan warnanya banyak, seperti pink, merah, putih, dan kuning. Bentuknya bulat, besar, dan mahkotanya berlapis-lapis. Konon, namanya diambil dari Paeon, dewa penyembuhan Yunani.",
+    "sisa": 84,
+    "id": "9"
+  },
+  {
+    "nama": "Teratai",
+    "gambar": "https://cdn.idntimes.com/content-images/post/20220527/pexels-diego-madrigal-539694-ed599c4b08902e1ac4931c184e9655c8.jpg",
+    "harga": 40000,
+    "deskripsi": "Teratai umumnya memiliki tiga warna dasar, yaitu merah muda, putih, dan krem. Bunga yang mekar di atas permukaan air ini adalah simbol kesucian, kekuatan, ketahanan, dan kelahiran kembali (rebirth).",
+    "sisa": 87,
+    "id": "10"
+  },
+  {
+    "nama": "Carnation",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-3-min.jpg",
+    "harga": 53000,
+    "deskripsi": "Carnation berasal dari kata “corone” yang memiliki arti bunga kalung atau karangan bunga. Dalam bahasa latin disebut “carnis” yang memiliki arti “daging” karena warna asli Bunga Carnation adalah merah muda.",
+    "sisa": 61,
+    "id": "11"
+  },
+  {
+    "nama": "Gerbera",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-4-min.jpg",
+    "harga": 46000,
+    "deskripsi": "Bunga gerbera yang juga dikenal dengan nama bunga daisy biasanya menjadi salah satu bunga dekorasi terbaik dalam acara-acara pernikahan.Selain sebagai bunga dekorasi, Gerbera kerap dijadikan bahan dalam pembuatan hand bouquet. Alasannya karena selain bentuk dan warnanya yang indah, bunga garbera juga memiliki banyak variasi warna.Anda dapat berkreasi dengan membuat bunga tangan dari gerbera baik satu warna maupun mengkombinakasikannya dengan beberapa warna.",
+    "sisa": 82,
+    "id": "12"
+  },
+  {
+    "nama": "Matahari",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-5-min.jpg",
+    "harga": 32000,
+    "deskripsi": "Bunga Matahari memiliki warna yang mencolok dan memancarkan kekaguman serta melambangkan keceriaan.Anda dapat memberikan hadiah buket bunga matahari kepada orang yang Anda kagumi. Bunga matahari dapat dengan mudah Anda temukan karena banyak tersebar di wilayah Indonesia.",
+    "sisa": 76,
+    "id": "13"
+  },
+  {
+    "nama": "Gardenia",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-7-min.jpg",
+    "harga": 47000,
+    "deskripsi": "Jenis bunga populer yang banyak digunakan dalam membuat bouquet bunga berikutnya ada Bunga Gardenia.Gardenia atau dengan nama lain bunga kaca piring ini sebenarnya masih dari keluarga tanaman kopi. Asal gardenia dari negara Afrika, Asia, Hawaii dan Kepulauan Pasifik Australia.",
+    "sisa": 30,
+    "id": "14"
+  },
+  {
+    "nama": "Anggrek",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-8-min.jpg",
+    "harga": 55000,
+    "deskripsi": "Bunga Anggrek adalah salah satu bunga dengan tampilan yang anggun dan memiliki kekuatan yang murni. Anggrek sendiri memiliki banyak jenis dan warna.",
+    "sisa": 3,
+    "id": "15"
+  },
+  {
+    "nama": "Daffodil",
+    "gambar": "https://alamatjalan.com/wp-content/uploads/2019/10/10-Jenis-Bunga-Terbaik-untuk-Membuat-Hand-Bouquet-10-min.jpg",
+    "harga": 60000,
+    "deskripsi": "Bunga Daffodil melambangkan sebuah harapan, optimisme dan kegembiraan. Buket dan rangkaian bunga daffodil biasanya diberikan pada saat merayakan kelahiran anak atau pekerjaan baru.Warna atraktif seperti kuning dan putih dari daffodil banyak disukai dan menjadi keunikan dari jenis bunga yang satu ini. Makanya banyak bisnis florist yang menjadikan bunga daffodil sebagai bahan hand bouquet.",
+    "sisa": 21,
+    "id": "16"
+  }
+]
