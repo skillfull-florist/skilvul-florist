@@ -7,7 +7,7 @@ const DETAIL_PESANAN = 'DETAIL_PESANAN';
 const DaftarPesanan = ({ pesanan }) => {
   const navigate = useNavigate();
   const handleDetail = (detail) => {
-    localStorage.setItem(DETAIL_PESANAN, JSON.stringify(detail));
+    sessionStorage.setItem(DETAIL_PESANAN, JSON.stringify(detail));
     navigate('/pesanan/detail');
   };
   return (

@@ -5,32 +5,34 @@ import img1 from '../../assets/shopping-cart.png';
 import ModalBuket from './ModalBuket';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
 import { ADD_NEW_PRODUCT, BUKET } from './../../contexts/ContextConsts';
+import ToastBuket from './ToastBuket';
 
 export const BuketItem = ({ buket }) => {
   const navigate = useNavigate();
   const { dispatch } = useContext(KeranjangContext);
-
   const [modalShow, setModalShow] = useState(false);
+  const [toastShow, setToastShow] = useState(false);
 
   const handleAddProduct = () => {
-    if (window.confirm('Tambah produk ini ke keranjang?') === true) {
-      dispatch({
-        type: ADD_NEW_PRODUCT,
-        payload: {
-          ...buket,
-          idProduk: buket.id,
-          tipe: BUKET,
-        },
-      });
-    }
+    dispatch({
+      type: ADD_NEW_PRODUCT,
+      payload: {
+        ...buket,
+        idProduk: buket.id,
+        tipe: BUKET,
+      },
+    });
+    setToastShow(true);
+    setTimeout(() => {
+      setToastShow(false);
+    }, 1500);
   };
   return (
     <Col mb={3} md={3}>
       <div className='pt-4 m-1 text-white'>
-
-        <Card className='card text-dark' style={{ backgroundColor: "#E9F7E8" }}>
+        <ToastBuket show={toastShow} />
+        <Card className='card text-dark' style={{ backgroundColor: '#E9F7E8' }}>
           <Card.Img src={buket.gambar} height='200' />
-
           <Card.Body>
             <Card.Title onClick={() => setModalShow(true)}>{buket.nama}</Card.Title>
             <ModalBuket

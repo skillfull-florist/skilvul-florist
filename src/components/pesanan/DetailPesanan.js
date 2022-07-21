@@ -9,7 +9,7 @@ const DetailPesanan = () => {
   const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
-    setPesanan(JSON.parse(localStorage.getItem(DETAIL_PESANAN)));
+    setPesanan(JSON.parse(sessionStorage.getItem(DETAIL_PESANAN)));
   }, []);
   return (
     <Container fluid>
@@ -57,7 +57,7 @@ const DetailPesanan = () => {
                               item.tipe.slice(1) +
                               ' ' +
                               item.nama
-                            : 'Tanaman' + item.nama}
+                            : 'Tanaman ' + item.nama}
                         </td>
                         <td>Rp. {item.harga}</td>
                         <td>{item.jumlah}</td>

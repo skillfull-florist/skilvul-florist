@@ -5,6 +5,7 @@ export const postKeranjang = (payload) => {
 };
 
 export const putKeranjangById = (idKeranjang, prePayload) => {
+  console.log(prePayload);
   const { id, ...payload } = prePayload;
   return mockapi.put(`/keranjang/${idKeranjang}`, payload).then((res) => res.data);
 };

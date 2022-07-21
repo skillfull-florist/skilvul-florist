@@ -4,7 +4,6 @@ import Img3 from '../../assets/buket5.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import { Alert, Row } from 'react-bootstrap';
 import './Carousel.css';
-import Kategori from './Kategori';
 
 function HomeCarousel() {
   return (
@@ -20,7 +19,7 @@ function HomeCarousel() {
         }}
       >
         <Row style={{ display: 'flex' }}>
-          <Carousel fade>
+          <Carousel fade className='d-none-none'>
             <Carousel.Item>
               <img className='d-block w-100' src={Img1} alt='First slide' />
               <Carousel.Caption>
@@ -53,7 +52,6 @@ function HomeCarousel() {
             </Carousel.Item>
           </Carousel>
         </Row>
-        <Kategori />
       </Alert>
     </div>
   );

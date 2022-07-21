@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Alert, Button, Row, Col } from 'react-bootstrap';
 import ModalRincian from './ModalRincian';
 import { KeranjangContext } from './../../contexts/KeranjangContext';
+import { AuthContext } from './../../contexts/AuthContext';
 import * as Helper from './../../helpers/TransaksiHelper';
 import { DELETE_KERANJANG } from './../../contexts/ContextConsts';
 
@@ -15,6 +16,7 @@ const myStyle = {
 };
 
 const CardRincian = () => {
+  const { auth } = useContext(AuthContext);
   const [dataBeli, setDataBeli] = useState(null);
   const [total, setTotal] = useState(-1);
   const [isKeranjang, setIsKeranjang] = useState(false);
@@ -52,14 +54,24 @@ const CardRincian = () => {
 
   const handleLanjut = () => {
     setModalShow(true);
+    let payload = {
+      id: auth.user.id,
+      idUser: auth.user.id,
+      data: [{ ...dataBeli.produk }],
+    };
     if (isKeranjang) {
-      Helper.postTransaksi(dataBeli.produk).then((data) => {
+      payload = dataBeli.produk;
+    }
+    Helper.postTransaksi(payload).then((data) => {
+      if (isKeranjang) {
         dispatch({
           type: DELETE_KERANJANG,
           payload: data,
         });
-      });
-    }
+        localStorage.removeItem(KERANJANG_BUY);
+      }
+      localStorage.removeItem(QUICK_BUY);
+    });
   };
   //Modal
   const [modalShow, setModalShow] = useState(false);

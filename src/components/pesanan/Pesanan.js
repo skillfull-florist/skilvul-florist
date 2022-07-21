@@ -14,7 +14,7 @@ const Pesanan = () => {
     async function getTransaksi() {
       const result = await Helper.getTransaksiByUserId(
         auth.user.id,
-        (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
       );
 
       setPesanan(result);
