@@ -16,8 +16,9 @@ import Transaksi from './components/transaksi/Transaksi';
 import Profil from './components/profil/Profil';
 import Rincian from './components/transaksi/Rincian';
 import TransaksiBerhasil from './components/transaksi/TransaksiBerhasil';
-import Riwayatpesanan from './components/riwayat/Riwayatpesanan';
+import RiwayatPesanan from './components/riwayat/RiwayatPesanan';
 import Keranjang from './components/keranjang/Keranjang';
+import Pesanan from './components/pesanan/Pesanan';
 
 function App() {
   return (
@@ -35,9 +36,9 @@ function App() {
             <Route
               path='transaksi/:type/:id'
               element={
-                <ProtectedRoute>
-                  <Transaksi />
-                </ProtectedRoute>
+                // <ProtectedRoute>
+                <Transaksi />
+                // </ProtectedRoute>
               }
             />
 
@@ -61,7 +62,15 @@ function App() {
               path='riwayat'
               element={
                 <ProtectedRoute>
-                  <Riwayatpesanan />
+                  <RiwayatPesanan />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path='pesanan'
+              element={
+                <ProtectedRoute>
+                  <Pesanan />
                 </ProtectedRoute>
               }
             />

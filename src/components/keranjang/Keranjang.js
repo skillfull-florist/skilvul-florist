@@ -97,7 +97,12 @@ const Keranjang = () => {
                   </tr>
                   <tr className='position-center'>
                     <td colSpan={2}>
-                      <Button href='#' variant='success'>
+                      <Button
+                        variant='success'
+                        onClick={() =>
+                          navigate(`/transaksi/keranjang/${keranjang.idUser}`)
+                        }
+                      >
                         Beli
                       </Button>
                     </td>

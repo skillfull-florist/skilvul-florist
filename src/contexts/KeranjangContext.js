@@ -207,7 +207,6 @@ export const keranjangReducer = (state, action) => {
     case DELETE_KERANJANG:
       return {
         ...(() => {
-          console.log('delete');
           Helper.deleteKeranjangById(state.id)
             .then(() => {
               localStorage.removeItem(KERANJANG);
@@ -235,7 +234,6 @@ export const validateKeranjangAPIByUserId = (id, dispatch, keranjang = null) => 
   Helper.getKeranjangByUserId(id)
     .then((data) => {
       const keranjangFromApi = data;
-      console.log(data);
       localStorage.setItem(KERANJANG, JSON.stringify(keranjangFromApi));
       dispatch({
         type: ADD_KERANJANG,
@@ -281,7 +279,6 @@ const KeranjangContextProvider = (props) => {
       validateKeranjangAPIByUserId(user.id, dispatch);
     } else {
       const keranjangLocal = JSON.parse(localStorage.getItem(KERANJANG));
-      console.log(keranjangLocal);
       if (keranjangLocal !== null) {
         dispatch({
           type: ADD_KERANJANG,
