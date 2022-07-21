@@ -10,7 +10,7 @@ function Kategori() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <Row>
         <Col
           style={{

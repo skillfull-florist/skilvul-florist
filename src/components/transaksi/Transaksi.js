@@ -5,38 +5,53 @@ import CardPembayaran from './CardPembayaran';
 import CardPembelian from './CardPembelian';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import * as Helper from './../../helpers/KeranjangHelper';
+
+const QUICK_BUY = 'QUICK_BUY';
+
 function Transaksi() {
-  const navigate = useNavigate();
   const params = useParams();
-  const [produk, setProduk] = useState([]);
+  const [produk, setProduk] = useState(null);
+  const [keranjang, setKeranjang] = useState(false);
 
   useEffect(() => {
-    if (
-      params.type !== 'buket' ||
-      params.type !== 'tanamanhias' ||
-      params.type !== 'keranjang'
-    ) {
-      navigate('/PageNotFound');
-      return;
-    }
-
+    localStorage.removeItem(QUICK_BUY);
     const getTransaksiById = async () => {
       let url = '';
       if (params.type === 'buket') {
         url = `/buket/${params.id}`;
+        const result = await mockapi.get(url);
+        setProduk({
+          ...result.data,
+          idProduk: result.data.id,
+          jumlah: 1,
+          tipe: 'buket',
+        });
+        setKeranjang(false);
+        return;
       }
 
       if (params.type === 'tanamanhias') {
         url = `/tanamanhias/${params.id}`;
+        const result = await mockapi.get(url);
+        setProduk({
+          ...result.data,
+          idProduk: result.data.id,
+          jumlah: 1,
+          tipe: 'tanamanhias',
+        });
+        setKeranjang(false);
+        return;
       }
 
       if (params.type === 'keranjang') {
-        url = `/keranjang/${params.id}`;
+        const result = await Helper.getKeranjangByUserId(params.id);
+        setProduk(result);
+        setKeranjang(true);
+        return;
       }
 
-      const result = await mockapi.get(url);
-
-      setProduk(result.data);
+      // navigate('/');
     };
 
     getTransaksiById();
@@ -47,10 +62,10 @@ function Transaksi() {
     <div>
       <Row>
         <Col>
-          <CardPembelian produk={produk} />
+          <CardPembelian produk={produk} isKeranjang={keranjang} />
         </Col>
         <Col>
-          <CardPembayaran produk={produk} />
+          <CardPembayaran produk={produk} isKeranjang={keranjang} />
         </Col>
       </Row>
     </div>

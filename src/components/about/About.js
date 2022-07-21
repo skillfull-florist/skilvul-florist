@@ -11,12 +11,14 @@ export default function About() {
         marginbottom: 10,
       }}
     >
-      <Link to='description' style={{ margin: 8, textDecoration: 'none' }}>
-        <h3>Description</h3>
-      </Link>
-      <Link to='services' style={{ margin: 8, textDecoration: 'none' }}>
-        <h3>Services</h3>
-      </Link>
+      <div className='d-flex justify-content-center'>
+        <Link to='description' style={{ margin: 8, textDecoration: 'none' }}>
+          <h3>Description</h3>
+        </Link>
+        <Link to='services' style={{ margin: 8, textDecoration: 'none' }}>
+          <h3>Services</h3>
+        </Link>
+      </div>
       <Outlet />
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert, Row, Col } from 'react-bootstrap';
 import poto1 from '../../assets/bca.jpg';
 
-const Riwayatpesanan = () => {
+const RiwayatPesanan = () => {
   return (
     <div>
       <Alert
@@ -37,4 +37,4 @@ const Riwayatpesanan = () => {
   );
 };
 
-export default Riwayatpesanan;
+export default RiwayatPesanan;

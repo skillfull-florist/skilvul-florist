@@ -5,6 +5,7 @@ export const postKeranjang = (payload) => {
 };
 
 export const putKeranjangById = (idKeranjang, prePayload) => {
+  console.log(prePayload);
   const { id, ...payload } = prePayload;
   return mockapi.put(`/keranjang/${idKeranjang}`, payload).then((res) => res.data);
 };
@@ -15,7 +16,7 @@ export const deleteKeranjangById = (id) => {
 
 export const getKeranjangByUserId = async (userId) => {
   const res = await mockapi.get('/keranjang/');
-  const keranjang = res.data.filter((item) => item.idUser === userId);
+  const keranjang = res.data.filter((item) => `${item.idUser}` === `${userId}`);
   if (keranjang.length > 0) {
     return keranjang[0];
   }

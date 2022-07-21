@@ -1,8 +1,10 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import sukses from '../../assets/Sukses1.png';
+import { useNavigate } from 'react-router-dom';
 
 const TransaksiBerhasil = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Row>
@@ -23,6 +25,7 @@ const TransaksiBerhasil = () => {
           borderRadius: '0',
           border: '1px solid #418459',
         }}
+        onClick={() => navigate('/pesanan')}
       >
         Cek Pesanan Anda
       </Button>
