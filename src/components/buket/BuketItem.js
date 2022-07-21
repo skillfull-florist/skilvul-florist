@@ -25,10 +25,12 @@ export const BuketItem = ({ buket }) => {
     }
   };
   return (
-    <Col mb={3} md={4}>
+    <Col mb={3} md={3}>
       <div className='pt-4 m-1 text-white'>
-        <Card className='card text-dark' style={{ backgroundColor: '#E9F7E8' }}>
-          <Card.Img src={buket.gambar} height='300' />
+
+        <Card className='card text-dark' style={{ backgroundColor: "#E9F7E8" }}>
+          <Card.Img src={buket.gambar} height='200' />
+
           <Card.Body>
             <Card.Title onClick={() => setModalShow(true)}>{buket.nama}</Card.Title>
             <ModalBuket
