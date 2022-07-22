@@ -31,6 +31,7 @@ const DetailPesanan = () => {
             {pesanan !== null ? (
               <div>
                 <ModalDetailPesanan
+                  alamat={''}
                   pesanan={pesanan}
                   show={modalShow}
                   onHide={() => setModalShow(false)}

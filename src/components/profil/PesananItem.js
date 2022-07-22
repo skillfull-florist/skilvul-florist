@@ -4,6 +4,7 @@ import HistoryItem from './HistoryItem';
 const PesananItem = ({ pesanan }) => {
   return (
     <div>
+      <hr />
       {Helper.getDate(pesanan.createdAt)}
       <hr />
       {pesanan.data.map((item, idx) => (
