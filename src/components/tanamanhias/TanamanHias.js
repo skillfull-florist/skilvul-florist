@@ -4,12 +4,15 @@ import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { TanamanHiasItem } from './TanamanHiasItem';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
+import { cleanBuys } from './../../helpers/TransaksiHelper';
 
 const TanamanHias = () => {
   const [tanamanHiasAll, setTanamanHiasAll] = useState([]);
   const [tanamanHiasFound, setTanamanHiasFound] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchNama, setSearchNama] = useState('');
+
+  cleanBuys()
 
   const handleSearchChange = (e) => {
     setSearchNama(e.target.value.trim());

@@ -1,5 +1,5 @@
 import { Alert, Button } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import poto1 from '../../assets/1.jpg';
 import poto2 from '../../assets/mobile-payment.png';
@@ -10,16 +10,21 @@ import grab from '../../assets/grab.jpg';
 import MyVerticallyCenteredModal from './Modal1';
 import MyVerticallyCenteredModal1 from './Modal2';
 import MyVerticallyCenteredModal2 from './Modal3';
+import { AuthContext } from './../../contexts/AuthContext';
 
 const QUICK_BUY = 'QUICK_BUY';
 const KERANJANG_BUY = 'KERANJANG_BUY';
 
 const CardPembayaran = ({ produk, isKeranjang }) => {
+  const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
   //data bayar
   const [dataBeli, setDataBeli] = useState({ produk, pembayaran: '', jasakirim: '' });
   const [formKosong, setFormKosong] = useState({});
   const [isLengkap, setIsLengkap] = useState(false);
+  const [namaKirim, setNamaKirim] = useState('');
+  const [alamatKirim, setAlamatKirim] = useState('');
+  const [noKirim, setNoKirim] = useState('');
 
   const handleChange = (e) => {
     setDataBeli({ ...dataBeli, [e.target.name]: e.target.value });
@@ -28,7 +33,17 @@ const CardPembayaran = ({ produk, isKeranjang }) => {
   const handleSubmit = (e) => {
     // setFormKosong(validasi(dataBeli));
     // setIsLengkap(true);
-    const data = JSON.stringify({ ...dataBeli, produk });
+    const payload = {
+      ...dataBeli,
+      produk,
+      alamat: {
+        nama: namaKirim,
+        alamat: alamatKirim,
+        nohp: noKirim,
+      },
+    };
+
+    const data = JSON.stringify(payload);
     if (isKeranjang && produk !== null) {
       localStorage.setItem(KERANJANG_BUY, data);
     } else {
@@ -170,6 +185,40 @@ const CardPembayaran = ({ produk, isKeranjang }) => {
                   alt='gojek'
                 />
                 &nbsp;
+              </p>
+            </Alert>
+            <hr />
+            <Alert style={myStyle}>
+              <p>Isi informasi alamat pengiriman</p>
+              <hr />
+              <p style={{ textAlign: 'left' }}>Nama penerima:</p>
+              <p style={{ textAlign: 'left', margin: '4px' }}>
+                <input
+                  type='text'
+                  name='namapenerima'
+                  value={namaKirim}
+                  onChange={(ev) => setNamaKirim(ev.target.value)}
+                />
+              </p>
+              <hr />
+              <p style={{ textAlign: 'left' }}>Alamat tujuan:</p>
+              <p style={{ textAlign: 'left', margin: '4px' }}>
+                <input
+                  type='text'
+                  name='alamattujuan'
+                  value={alamatKirim}
+                  onChange={(ev) => setAlamatKirim(ev.target.value)}
+                />
+              </p>
+              <hr />
+              <p style={{ textAlign: 'left' }}>Nomor kontak:</p>
+              <p style={{ textAlign: 'left', margin: '4px' }}>
+                <input
+                  type='number'
+                  name='nomorkontak'
+                  value={noKirim}
+                  onChange={(ev) => setNoKirim(ev.target.value)}
+                />
               </p>
             </Alert>
             <hr />

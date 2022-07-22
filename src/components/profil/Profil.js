@@ -76,7 +76,6 @@ const Profil = () => {
               }}
             >
               <h6 style={{ color: 'black' }}>Riwayat Belanja</h6>
-              <hr />
               {isPesanan ? (
                 pesanan.map((item, idx) => <PesananItem key={idx} pesanan={item} />)
               ) : (

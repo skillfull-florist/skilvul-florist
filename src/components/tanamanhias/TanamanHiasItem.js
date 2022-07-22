@@ -43,7 +43,7 @@ export const TanamanHiasItem = ({ tanamanHias }) => {
               tanamanhias={tanamanHias}
               onHide={() => setModalShow(false)}
             />
-            <Card.Text>{tanamanHias.harga}</Card.Text>
+            <Card.Text>Rp. {tanamanHias.harga}</Card.Text>
             <Button
               style={{
                 backgroundColor: '#67A478',

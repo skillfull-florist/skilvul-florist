@@ -4,12 +4,15 @@ import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { BuketItem } from './BuketItem';
 import img1 from '../../assets/buket.png';
 import img2 from '../../assets/hias.png';
+import { cleanBuys } from './../../helpers/TransaksiHelper';
 
 const Buket = () => {
   const [buketsAll, setBuketsAll] = useState([]);
   const [buketsFound, setBuketsFound] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchNama, setSearchNama] = useState('');
+
+  cleanBuys();
 
   const handleSearchChange = (e) => {
     setSearchNama(e.target.value.trim());

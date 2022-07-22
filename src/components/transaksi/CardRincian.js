@@ -54,10 +54,12 @@ const CardRincian = () => {
 
   const handleLanjut = () => {
     setModalShow(true);
+
     let payload = {
       id: auth.user.id,
       idUser: auth.user.id,
       data: [{ ...dataBeli.produk }],
+      alamat: dataBeli.alamat,
     };
     if (isKeranjang) {
       payload = dataBeli.produk;
@@ -69,6 +71,7 @@ const CardRincian = () => {
           payload: data,
         });
         localStorage.removeItem(KERANJANG_BUY);
+        localStorage.removeItem(QUICK_BUY);
       }
       localStorage.removeItem(QUICK_BUY);
     });
@@ -189,6 +192,33 @@ const CardRincian = () => {
                 </Col>
                 <Col style={{ textAlign: 'Right', color: 'red' }}>
                   <p>{dataBeli.jasakirim}</p>
+                </Col>
+              </Row>
+            </Alert>
+            <hr />
+            <Alert style={myStyle}>
+              <Row>
+                <Col style={{ textAlign: 'left' }}>
+                  <p>Nama penerima</p>
+                </Col>
+                <Col style={{ textAlign: 'Right', color: 'red' }}>
+                  <p>{dataBeli.alamat.nama}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col style={{ textAlign: 'left' }}>
+                  <p>Alamat tujuan</p>
+                </Col>
+                <Col style={{ textAlign: 'Right', color: 'red' }}>
+                  <p>{dataBeli.alamat.alamat}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col style={{ textAlign: 'left' }}>
+                  <p>No kontak</p>
+                </Col>
+                <Col style={{ textAlign: 'Right', color: 'red' }}>
+                  <p>{dataBeli.alamat.nohp}</p>
                 </Col>
               </Row>
             </Alert>

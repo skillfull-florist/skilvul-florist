@@ -42,7 +42,7 @@ export const BuketItem = ({ buket }) => {
               buket={buket}
               onHide={() => setModalShow(false)}
             />
-            <Card.Text>{buket.harga}</Card.Text>
+            <Card.Text>Rp. {buket.harga}</Card.Text>
             <Button
               style={{
                 backgroundColor: '#67A478',
