@@ -1,4 +1,5 @@
 ## Front End:
+
 - sudah bagus ada validasi form, tapi masih diabaikan ketika tombol login/regis ditekan
 - tidak ada detail product
 - pop up pada tanaman hias tidak terlihat
